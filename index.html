@@ -11,15 +11,33 @@
 <meta name="distribution" content="global" /> 
 </head>
 <script>
+const premiosTexto = `1. Prêmio: TV 50 POLEGADAS
+2. Prêmio: CELULAR
+3. Prêmio: MICROONDAS
+4. Prêmio: BIKE
+5. Prêmio: GELADEIRA
+6. Prêmio: CESTA DE NATAL
+7. Prêmio: CESTA DE NATAL
+8. Prêmio: CESTA DE NATAL
+9. Prêmio: CESTA DE NATAL
+10. Prêmio: CESTA DE NATAL
+11. Prêmio: 1 VENTILADOR
+12. Prêmio: 1 MICROONDAS
+13. Prêmio: 1 BICICLETA
+14. Prêmio: 1 NOTEBOOK
+15. Prêmio: 1 CELULAR
+
++ PREMIOS EXTRAS`;
+ 
 var numCartelaEsc = "";
- var BlocoCartela='1 ao 20'
+var BlocoCartela='1 ao 20'
 function CopiarPix(){
 var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
 document.execCommand('copy');
 alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar também o COMPROVANTE.' )}
-function mostrarPremios(message){
-  alert(message);
+function mostrarPremios(){
+  alert(premiosTexto);
 }
 function mostrarForm(tipo, cartela) {
 if (tipo=='mostrar') {
@@ -197,9 +215,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0006')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -249,9 +265,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0007')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -301,9 +315,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0008')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -353,9 +365,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0010')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -405,9 +415,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0011')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -457,9 +465,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0012')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -509,9 +515,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0013')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -561,9 +565,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0014')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -613,9 +615,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0015')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -665,9 +665,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0016')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -717,9 +715,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0017')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -769,9 +765,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0018')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -821,9 +815,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0019')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
@@ -873,9 +865,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0020')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
-
-+ PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios()">&nbsp Premios &nbsp</button><br>
 <br>
 <table width="201" height="100" border="1" bgcolor="#000000" style="font-size: min(16px,48vw)">
 <tbody style="font-family:Arial, Helvetica, sans-serif; color: chartreuse;" >
