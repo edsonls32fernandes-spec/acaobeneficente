@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@ function CopiarPix(){
 var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
 document.execCommand('copy');
-alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar também o COMPROVANTE.' )}
+alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar tambÃ©m o COMPROVANTE.' )}
 function mostrarPremios(message){
   alert(message);
 }
@@ -162,19 +162,19 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div id="preencha" style="text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 2.3" ><B>PREENCHA OS DADOS</B></div>
 <form id="FormComprador" style="font-family: Arial, Helvetica, sans-serif; margin: 5px;">
 <p>
-<div style="font-family: Arial, Helvetica, sans-serif; size: 2px; text-align: center;color: red;">Cartela Nº <span id="numcart"> 0000</span></div>
+<div style="font-family: Arial, Helvetica, sans-serif; size: 2px; text-align: center;color: red;">Cartela NÂº <span id="numcart"> 0000</span></div>
 <label for="nomeCP"  style="font-size: 14px;">NOME</label>
 <input type="text" onfocus="RecuperarDados('entrouNome')"  id="nomeCP" onblur="Maiuscula('nomeCP')" maxlength="50" style="width: 270px;" /><br><br>
-<label for="enderecoCP" style="font-size: 14px;">ENDEREÇO</label>
+<label for="enderecoCP" style="font-size: 14px;">ENDEREÃ‡O</label>
 <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')"   maxlength="50" style="width: 270px;"/><br><br>
 <label for="cidadeCP" style="font-size: 14px;">CIDADE</label><br>
 <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" style="width: 200px;"/> <label for="ufCP" style="font-size: 14px;">UF</label> <input type ="text"  onblur="Maiuscula('ufCP')" maxlength="2"  id="ufCP" style="width: 25px;"/><br><br>
-<label for="N_celularCP" style="font-size: 14px;">DDD+Nº Celular</label> &nbsp&nbsp&nbsp <Strong> PIX:</Strong><span style="color: red;" >Celular</span>&nbsp&nbsp<button class="cursor_m" type="button" style="background-color: aqua; border-radius: 5px;  border-color:darkgrey; font-size: 12px;"  onclick="CopiarPix()" >&nbsp Copiar&nbsp</button>
+<label for="N_celularCP" style="font-size: 14px;">DDD+NÂº Celular</label> &nbsp&nbsp&nbsp <Strong> PIX:</Strong><span style="color: red;" >Celular</span>&nbsp&nbsp<button class="cursor_m" type="button" style="background-color: aqua; border-radius: 5px;  border-color:darkgrey; font-size: 12px;"  onclick="CopiarPix()" >&nbsp Copiar&nbsp</button>
 <input type="tel" size="11"  id="N_celularCP"  maxlength="15"  onkeyup="handlePhone(event)"/>
 &nbsp&nbsp&nbsp<textarea id="ChavePix" rows="1" cols="18"  readonly="readonly" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; resize:none; background-color: transparent;border:0;margin-left:-10px; height: 12px; ">48991679666</textarea> </br>
 <br>
 <div style="font-family: Arial, Helvetica, sans-serif;font-size: 10px;color: black;">
-  Obs.: Caso a cartela escolhida não esteja mais disponível para venda, o sistema escolherá outra automaticamente.
+  Obs.: Caso a cartela escolhida nÃ£o esteja mais disponÃ­vel para venda, o sistema escolherÃ¡ outra automaticamente.
 <br>
 <br>
 <br>
@@ -188,7 +188,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -197,7 +197,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0006')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -230,7 +230,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -240,7 +240,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -249,7 +249,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0007')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -282,7 +282,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -292,7 +292,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -301,7 +301,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0008')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -334,7 +334,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -344,7 +344,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -353,7 +353,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0010')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -386,7 +386,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -396,7 +396,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -405,7 +405,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0011')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -438,7 +438,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -448,7 +448,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -457,7 +457,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0012')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -490,7 +490,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -500,7 +500,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -509,7 +509,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0013')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -542,7 +542,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -552,7 +552,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -561,7 +561,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0014')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -594,7 +594,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -604,7 +604,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -613,7 +613,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0015')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -646,7 +646,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -656,7 +656,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -665,7 +665,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0016')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -698,7 +698,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -708,7 +708,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -717,7 +717,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0017')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -750,7 +750,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -760,7 +760,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -769,7 +769,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0018')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -802,7 +802,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -812,7 +812,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -821,7 +821,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0019')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -854,7 +854,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -864,7 +864,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
-        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÚDE DE EDSON FERNANDES<br>
+        <th width="550" height="297"  align="center" bgcolor="#1" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;"><br>BINGO BENEFICIENT EM PROL DOS TRATAMENTOS DE SAÃšDE DE EDSON FERNANDES<br>
       <br>
 <div> <font color="#FFFFFF"  style="font-size:14px"> Sorteio: 26/10/25 as 14:00 </font> </div>
 <br>
@@ -873,7 +873,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <tr>
 <br>
 <button class="cursor_m" style="background-color: aqua; border-radius: 5px;"  type="button"  onclick="mostrarForm('mostrar','0020')"><font size="3" face="arial">&nbsp&nbsp Comprar &nbsp</font></button>&nbsp
-<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.Prêmio: TV 50 POLEGADAS\n2.Prêmio: CELULAR\n3.Prêmio: MICROODAS\n4.Prêmio: BIKE\n5.Prêmio: GELADEIRA\n6.Prêmio: CESTA DE NATAL\n7.Prêmio: CESTA DE NATAL\n8.Prêmio: CESTA DE NATAL\n9.Prêmio: CESTA DE NATAL\n10.Prêmio: CESTA DE NATAL\n11.Prêmio: 1 VENTILADOR\n12.Prêmio: 1 MICROONDAS\n13.Prêmio: 1 BICICLETA\n14.Prêmio: 1 NOTEBOOK\n15.Prêmio: 1 CELULAR\n\n\nMais informações: \n\n15 Prêmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogão elétrico, churrasqueira portaátil, lavadora de alta pressão portátil, espremedor de frutas, sanduicheira e panquequeira.
+<button class="cursor_m newBotao" style="background-color:darkgoldenrod;color:white;border-radius:5px;font-size: 15px;font-family:Arial;"   type="button" onclick="mostrarPremios('1.PrÃªmio: TV 50 POLEGADAS\n2.PrÃªmio: CELULAR\n3.PrÃªmio: MICROODAS\n4.PrÃªmio: BIKE\n5.PrÃªmio: GELADEIRA\n6.PrÃªmio: CESTA DE NATAL\n7.PrÃªmio: CESTA DE NATAL\n8.PrÃªmio: CESTA DE NATAL\n9.PrÃªmio: CESTA DE NATAL\n10.PrÃªmio: CESTA DE NATAL\n11.PrÃªmio: 1 VENTILADOR\n12.PrÃªmio: 1 MICROONDAS\n13.PrÃªmio: 1 BICICLETA\n14.PrÃªmio: 1 NOTEBOOK\n15.PrÃªmio: 1 CELULAR\n\n\nMais informaÃ§Ãµes: \n\n15 PrÃªmios, Bicicleta, airfryer,  forno micro-ondas, mixer, processador, ventilador,  cafeteira, fogÃ£o elÃ©trico, churrasqueira portaÃ¡til, lavadora de alta pressÃ£o portÃ¡til, espremedor de frutas, sanduicheira e panquequeira.
 
 + PREMIOS EXTRAS')">&nbsp Premios &nbsp</button><br>
 <br>
@@ -906,7 +906,7 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 <br>
 <div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
+   SerÃ£o [ 15 ] prÃªmios. Cada prÃªmio concorrerÃ¡ com esses mesmos nÃºmeros!</p>
 </div>
 </tr>
 </table>
@@ -914,3 +914,4 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <br>
 </body>
 </html>
+
