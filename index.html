@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,24 @@
 <meta name="distribution" content="global" /> 
 </head>
 <script>
+const premiosTexto = `1.Pr?mio: Chaleira el?trica
+2.Pr?mio: Chaleira el?trica
+3.Pr?mio: Cafeteira
+4.Pr?mio: Cafeteira
+5.Pr?mio: Sanduicheira
+6.Pr?mio: Mixer
+7.Pr?mio: Panquequeira
+8.Pr?mio: Ventilador
+9.Pr?mio: Churrasqueira port?til
+10.Pr?mio: Lavadora de alta press?o port?til
+11.Pr?mio: Forno micro-ondas
+12.Pr?mio: Air fryer
+13.Pr?mio: Fog?o el?trico
+14.Pr?mio: Bike sem marcha
+15.Pr?mio: Bike 21 marchas
+
++ PREMIOS EXTRAS`;
+
 var numCartelaEsc = "";
  var BlocoCartela='1 ao 500'
 function CopiarPix(){
@@ -18,8 +36,8 @@ var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
 document.execCommand('copy');
 alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar tamb?m o COMPROVANTE.' )}
-function mostrarPremios(message){
-  alert(message);
+function mostrarPremios() {
+  alert(premiosTexto);
 }
 function mostrarForm(tipo, cartela) {
 if (tipo=='mostrar') {
