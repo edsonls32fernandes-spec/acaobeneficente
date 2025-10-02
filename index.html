@@ -56,7 +56,7 @@ var nomeC = document.getElementById('nomeCP').value;
 var endC = document.getElementById('enderecoCP').value;
 var CidadeUfC = document.getElementById('cidadeCP').value + "/"+document.getElementById('ufCP').value;
 var numCelC = document.getElementById('N_celularCP').value;
-var texto = "\n *Cartela:* "+ numCartelaEsc+"\n *Nome:* "+nomeC+"\n *End.:* "+endC+  "\n *Cidade:* "+ CidadeUfC + "\n *Fone:* "+ numCelC+ "\n *Bloco Cart:* "+BlocoCartela;
+var texto = "\n Cartela: "+ numCartelaEsc+"\n Nome: "+nomeC+"\n End.: "+endC+  "\n Cidade: "+ CidadeUfC + "\n Fone: "+ numCelC+ "\n Bloco Cart: "+BlocoCartela;
 texto = window.encodeURIComponent(texto);
 window.open ("https://api.whatsapp.com/send?phone=" + "55"+"48996040827"+ "&text=" + texto, "_blank");
 }
