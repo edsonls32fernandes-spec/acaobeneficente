@@ -14352,10 +14352,12 @@ function alternarCartela(botao, numero) {
   if (idx >= 0) {
     cartelasSelecionadas.splice(idx, 1);
     botao.classList.remove('selecionada');
+    botao.style.backgroundColor = '#007bff';
     botao.innerHTML = "Selecionar";
   } else {
     cartelasSelecionadas.push(numero);
     botao.classList.add('selecionada');
+    botao.style.backgroundColor = 'green';
     botao.innerHTML = "✅ Selecionado";
   }
   atualizarContadorCartelas();
@@ -14408,11 +14410,11 @@ function atualizarContadorCartelas() {
 
 document.addEventListener('DOMContentLoaded', function() {
   atualizarContadorCartelas();
-  const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
+  const botoes = document.querySelectorAll('button[data-cartela]');
   botoes.forEach(botao => {
-    botao.textContent = 'Selecionar';
-    botao.className = 'btn-cartela';
-    botao.removeAttribute('style');
+    const numero = botao.getAttribute('data-cartela');
+    botao.classList.add('btn-cartela');
+    botao.onclick = function() { alternarCartela(this, numero); };
   });
 });
 </script>
