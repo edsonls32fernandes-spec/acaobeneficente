@@ -2,6 +2,23 @@
 <!doctype html>
 <html>
 <head>
+
+<style>
+.btn-cartela {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-cartela:hover { background-color: #0056b3; }
+.btn-cartela.selecionada { background-color: #004080; }
+</style>
 <meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -173,6 +190,29 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 }
 </style>
 <body style="background-color:white; color:black; margin-top:30px;" onload="mostrarForm('fechar')">
+
+<header style="text-align:center; margin-bottom:25px;">
+  <h2 style="font-family:Arial;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛</h2>
+  <p style="font-weight:bold;">Sorteio: 26/10/2025 às 14:00</p>
+  <p><button onclick="mostrarPremios()" style="background-color:#ffc107; color:black; padding:8px 16px; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">🏆 Prêmios</button></p>
+  <p>Escaneie o QR Code abaixo para pagamento via PIX:</p>
+  <img src="https://raw.githubusercontent.com/edsonls32fernandes-spec/acaobeneficente/main/qrcode.png" alt="QR Code PIX" width="250" height="250">
+  <br>
+  <button id="btnCopiarPix" onclick="copiarPix()" style="background-color:#198754; color:white; padding:8px 16px; border:none; border-radius:8px; cursor:pointer;">📋 Copiar código PIX</button>
+  <hr style="margin-top:25px;">
+</header>
+<script>
+function copiarPix() {
+  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
+  navigator.clipboard.writeText(texto).then(function() {
+    var btn = document.getElementById("btnCopiarPix");
+    var original = btn.innerText;
+    btn.innerText = "✅ Copiado!";
+    setTimeout(() => { btn.innerText = original; }, 2000);
+    alert("Código PIX copiado com sucesso!");
+  });
+}
+</script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
 <div id="ModalForm" style="display:block; color:blue;">
 <div id="preencha" style="text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 2.3" ><B>PREENCHA OS DADOS</B></div>
@@ -14565,41 +14605,12 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 
 <script>
 var cartelasSelecionadas = [];
-var pixCopiaColaBase = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
 
 function alternarCartela(numero) {
   var idx = cartelasSelecionadas.indexOf(numero);
   if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
   else cartelasSelecionadas.push(numero);
   atualizarContadorCartelas();
-}
-
-function atualizarContadorCartelas() {
-  const botao = document.getElementById('finalizarCompra');
-  if (!botao) return;
-  const total = cartelasSelecionadas.length;
-  const valorTotal = total * 10; // R$10,00 por cartela
-
-  if (total > 0) {
-    botao.textContent = 'Finalizar Compra (' + total + ') - R
-</html>
- + valorTotal.toFixed(2);
-    botao.disabled = false;
-    botao.style.opacity = '1';
-    botao.style.cursor = 'pointer';
-  } else {
-    botao.textContent = 'Finalizar Compra';
-    botao.disabled = true;
-    botao.style.opacity = '0.6';
-    botao.style.cursor = 'not-allowed';
-  }
-
-  atualizarPix(valorTotal);
-}
-
-function atualizarPix(valor) {
-  const valorFormatado = valor.toFixed(2).replace('.', '');
-  window.pixCopiaCola = pixCopiaColaBase + valorFormatado;
 }
 
 function abrirFormularioCompra(){
@@ -14624,17 +14635,24 @@ function enviarMensagem(){
   window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto,'_blank');
 }
 
-function copiarPix() {
-  var texto = window.pixCopiaCola || pixCopiaColaBase;
-  navigator.clipboard.writeText(texto).then(function() {
-    var btn = document.getElementById("btnCopiarPix");
-    var original = btn.innerText;
-    btn.innerText = "✅ Copiado!";
-    setTimeout(() => { btn.innerText = original; }, 2000);
-    alert("Código PIX copiado com sucesso!");
-  });
+function atualizarContadorCartelas() {
+  const botao = document.getElementById('finalizarCompra');
+  if (!botao) return;
+  const total = cartelasSelecionadas.length;
+  if (total > 0) {
+    botao.textContent = 'Finalizar Compra (' + total + ')';
+    botao.disabled = false;
+    botao.style.opacity = '1';
+    botao.style.cursor = 'pointer';
+  } else {
+    botao.textContent = 'Finalizar Compra';
+    botao.disabled = true;
+    botao.style.opacity = '0.6';
+    botao.style.cursor = 'not-allowed';
+  }
 }
 
+// Atualiza todos os botões de cartela para o novo estilo azul
 document.addEventListener('DOMContentLoaded', function() {
   atualizarContadorCartelas();
   const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
