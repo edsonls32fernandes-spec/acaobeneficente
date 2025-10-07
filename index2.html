@@ -14381,8 +14381,9 @@ function atualizarContadorCartelas() {
   const botao = document.getElementById('finalizarCompra');
   if (!botao) return;
   const total = cartelasSelecionadas.length;
+  const valor = total * 10;
   if (total > 0) {
-    botao.textContent = 'Finalizar Compra (' + total + ')';
+    botao.textContent = 'Finalizar Compra (' + total + ' cartela' + (total>1?'s':'') + ' - R$ ' + valor.toFixed(2).replace('.', ',') + ')';
     botao.disabled = false;
     botao.style.opacity = '1';
     botao.style.cursor = 'pointer';
