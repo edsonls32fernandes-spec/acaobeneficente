@@ -17,7 +17,7 @@
   transition: all 0.2s ease-in-out;
 }
 .btn-cartela:hover { background-color: #0056b3; }
-.btn-cartela.selecionada { background-color: #004080; }
+.btn-cartela.selecionada { background-color: #28a745; color: white; }
 </style>
 <meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
@@ -14607,9 +14607,19 @@ function copiarPix() {
 var cartelasSelecionadas = [];
 
 function alternarCartela(numero) {
+  var btn = document.getElementById("btnCartela_" + numero);
   var idx = cartelasSelecionadas.indexOf(numero);
-  if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
-  else cartelasSelecionadas.push(numero);
+
+  if (idx >= 0) {
+    cartelasSelecionadas.splice(idx, 1);
+    btn.classList.remove("selecionada");
+    btn.textContent = "Selecionar";
+  } else {
+    cartelasSelecionadas.push(numero);
+    btn.classList.add("selecionada");
+    btn.textContent = "Selecionado";
+  }
+
   atualizarContadorCartelas();
 }
 
