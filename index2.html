@@ -5,16 +5,16 @@
 
 <style>
 .btn-cartela {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .btn-cartela:hover { background-color: #0056b3; }
 .btn-cartela.selecionada { background-color: #004080; }
@@ -192,27 +192,57 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 <body style="background-color:white; color:black; margin-top:30px;" onload="mostrarForm('fechar')">
 
 <header style="text-align:center; margin-bottom:25px;">
-  <h2 style="font-family:Arial;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛</h2>
-  <p style="font-weight:bold; font-family:Arial;">Sorteio: 26/10/2025 às 14:00</p>
-  <br>
-  <button id="btnCopiarPix" onclick="copiarPix()" style="background-color:#198754; color:white; padding:8px 16px; border:none; border-radius:8px; cursor:pointer;">📋 Copiar código PIX</button>
-  <hr style="margin-top:25px;">
+  <h2 style="font-family:Arial;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛</h2>
+  <p style="font-weight:bold; font-family:Arial;">Sorteio: 26/10/2025 às 14:00</p>
+  <br>
+  <button id="btnCopiarPix" onclick="copiarPix()" style="background-color:#198754; color:white; padding:8px 16px; border:none; border-radius:8px; cursor:pointer;">📋 Copiar código PIX</button>
+  <hr style="margin-top:25px;">
 </header>
 <script>
 function copiarPix() {
-  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
-  navigator.clipboard.writeText(texto).then(function() {
-    var btn = document.getElementById("btnCopiarPix");
-    var original = btn.innerText;
-    btn.innerText = "✅ Copiado!";
-    setTimeout(() => { btn.innerText = original; }, 2000);
-    alert("Código PIX copiado com sucesso!");
-  });
+  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
+  navigator.clipboard.writeText(texto).then(function() {
+    var btn = document.getElementById("btnCopiarPix");
+    var btnModal = document.getElementById("btnCopiarPixModal");
+    var btns = [btn, btnModal].filter(b => b); // Usa os dois botões
+    
+    btns.forEach(b => {
+      var original = b.innerText;
+      b.innerText = "✅ Copiado!";
+      setTimeout(() => { b.innerText = original; }, 2000);
+    });
+
+    alert("Código PIX copiado com sucesso!");
+  });
 }
 </script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
-<div id="ModalForm" style="display:block; color:blue;">
-<div id="preencha" style="text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 2.3" ><B>PREENCHA OS DADOS</B></div>
+<div id="ModalForm" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4); padding-top:60px;">
+  <div style="background-color:#fefefe; margin:5% auto; padding:20px; border:1px solid #888; width:90%; max-width:500px; border-radius:12px; box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); font-family:Arial, sans-serif;">
+    <span onclick="mostrarForm('fechar')" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+    <h3 style="text-align:center; color:#007bff; font-weight:bold; margin-bottom:10px;">Confirmação de Compra</h3>
+    <p style="text-align:center; font-weight:600; margin-bottom:5px;">Você selecionou <span id="qtdCartelasModal" style="color:red; font-size:1.1em;">0</span> cartela(s).</p>
+    <p style="text-align:center; margin-bottom:15px;">Cartelas: <span id="numcart" style="font-weight:bold; font-size:1em;"></span></p>
+
+    <div style="text-align:center; background-color:#e9ecef; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid #ced4da;">
+        <p style="font-weight:bold; color:#333; margin-bottom:10px;">Para finalizar, copie o PIX e preencha seus dados:</p>
+        <button id="btnCopiarPixModal" onclick="copiarPix()" style="background-color:#198754; color:white; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition: background-color 0.2s;">📋 Copiar código PIX</button>
+        <p style="font-size:0.85em; color:#6c757d; margin-top:10px;">(Chave PIX: 00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0)</p>
+    </div>
+
+    <input type="text" id="nomeCP" placeholder="Seu Nome Completo" style="width:100%; padding:12px; margin:8px 0; display:inline-block; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+    <input type="text" id="enderecoCP" placeholder="Endereço (Rua, Número, Bairro)" style="width:100%; padding:12px; margin:8px 0; display:inline-block; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+    <div style="display:flex; gap:10px;">
+        <input type="text" id="cidadeCP" placeholder="Cidade" style="width:70%; padding:12px; margin:8px 0; display:inline-block; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+        <input type="text" id="ufCP" placeholder="UF" maxlength="2" style="width:30%; padding:12px; margin:8px 0; display:inline-block; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+    </div>
+    <input type="tel" id="N_celularCP" placeholder="Seu WhatsApp/Telefone" style="width:100%; padding:12px; margin:8px 0; display:inline-block; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+
+    <button type="button" onclick="enviarMensagem()" style="background-color:#28a745; color:white; padding:12px 15px; border:none; border-radius:8px; cursor:pointer; width:100%; font-size:1.1em; margin-top:15px; font-weight:bold; transition: background-color 0.2s;">
+        ✅ Enviar Dados e Pedir Cartelas (WhatsApp)
+    </button>
+  </div>
+</div>
 <form id="FormComprador" style="font-family: Arial, Helvetica, sans-serif; margin: 5px;">
 <p>
 <div style="font-family: Arial, Helvetica, sans-serif; size: 2px; text-align: center;color: red;">Cartela Nº <span id="numcart"> 0000</span></div>
@@ -14604,71 +14634,94 @@ function copiarPix() {
 var cartelasSelecionadas = [];
 
 function alternarCartela(numero) {
-  var idx = cartelasSelecionadas.indexOf(numero);
-  if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
-  else cartelasSelecionadas.push(numero);
-  atualizarContadorCartelas();
+  var idx = cartelasSelecionadas.indexOf(numero);
+  if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
+  else cartelasSelecionadas.push(numero);
+
+  // Toggle selected class for visual feedback
+  const btn = document.getElementById('btnCartela_' + numero);
+  if (btn) {
+    if (idx >= 0) {
+        btn.classList.remove('selecionada');
+        btn.textContent = 'Selecionar';
+    } else {
+        btn.classList.add('selecionada');
+        btn.textContent = 'SELECIONADA'; // Visual confirmation
+    }
+  }
+
+  atualizarContadorCartelas();
 }
 
 function abrirFormularioCompra(){
-  if(cartelasSelecionadas.length===0){
-    alert('Selecione pelo menos uma cartela para comprar.');
-    return;
-  }
-  var modal=document.getElementById('ModalForm');
-  if(!modal){alert('Formulário não encontrado.');return;}
-  modal.style.display='block';
-  document.getElementById('numcart').innerHTML='<b>'+cartelasSelecionadas.join(' - ')+'</b><br><br>';
-  numCartelaEsc=cartelasSelecionadas.join(' - ');
+  if(cartelasSelecionadas.length===0){
+    alert('Selecione pelo menos uma cartela para comprar.');
+    return;
+  }
+  var modal=document.getElementById('ModalForm');
+  if(!modal){alert('Formulário não encontrado.');return;}
+  modal.style.display='block';
+  // Atualiza a lista de cartelas e o contador no modal
+  document.getElementById('numcart').innerHTML='<b>'+cartelasSelecionadas.join(' - ')+'</b>';
+  document.getElementById('qtdCartelasModal').innerHTML=cartelasSelecionadas.length;
 }
 
 function enviarMensagem(){
-  var nomeC=document.getElementById('nomeCP').value||'';
-  var endC=document.getElementById('enderecoCP').value||'';
-  var CidadeUfC=(document.getElementById('cidadeCP').value||'')+'/'+(document.getElementById('ufCP').value||'');
-  var numCelC=document.getElementById('N_celularCP').value||'';
-  var texto='*Desejo comprar as seguintes cartelas:* '+numCartelaEsc+'\n*Nome:* '+nomeC+'\n*End.:* '+endC+'\n*Cidade:* '+CidadeUfC+'\n*Fone:* '+numCelC+'\n*Bloco Cart:* '+BlocoCartela;
-  texto=window.encodeURIComponent(texto);
-  window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto,'_blank');
+  var nomeC=document.getElementById('nomeCP').value||'';
+  var endC=document.getElementById('enderecoCP').value||'';
+  var CidadeUfC=(document.getElementById('cidadeCP').value||'')+'/'+(document.getElementById('ufCP').value||'');
+  var numCelC=document.getElementById('N_celularCP').value||'';
+  var BlocoCartela = window.BlocoCartela || '1 ao 500';
+
+  // Constrói a mensagem individual para cada cartela selecionada, conforme solicitado
+  var messageParts = cartelasSelecionadas.map(cartela => {
+    return '*Cartela:* '+cartela+'\n*Nome:* '+nomeC+'\n*End.:* '+endC+'\n*Cidade:* '+CidadeUfC+'\n*Fone:* '+numCelC+'\n*Bloco Cart:* '+BlocoCartela;
+  });
+
+  // Junta as partes com quebras de linha duplas para separação clara
+  var texto='*Desejo comprar as seguintes cartelas: ('+cartelasSelecionadas.length+' total)*\n\n'+messageParts.join('\n\n');
+
+  texto=window.encodeURIComponent(texto);
+  window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto,'_blank');
 }
 
 function atualizarContadorCartelas() {
-  const botao = document.getElementById('finalizarCompra');
-  if (!botao) return;
-  const total = cartelasSelecionadas.length;
-  if (total > 0) {
-    botao.textContent = 'Finalizar Compra (' + total + ')';
-    botao.disabled = false;
-    botao.style.opacity = '1';
-    botao.style.cursor = 'pointer';
-  } else {
-    botao.textContent = 'Finalizar Compra';
-    botao.disabled = true;
-    botao.style.opacity = '0.6';
-    botao.style.cursor = 'not-allowed';
-  }
+  const botao = document.getElementById('finalizarCompra');
+  if (!botao) return;
+  const total = cartelasSelecionadas.length;
+  if (total > 0) {
+    botao.textContent = 'Finalizar Compra (' + total + ')';
+    botao.disabled = false;
+    botao.style.opacity = '1';
+    botao.style.cursor = 'pointer';
+  } else {
+    botao.textContent = '🛒 Finalizar Compra';
+    botao.disabled = true;
+    botao.style.opacity = '0.6';
+    botao.style.cursor = 'not-allowed';
+  }
 }
 
 // Atualiza todos os botões de cartela para o novo estilo azul
 document.addEventListener('DOMContentLoaded', function() {
-  atualizarContadorCartelas();
-  const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
-  botoes.forEach(botao => {
-    botao.textContent = 'Selecionar';
-    botao.className = 'btn-cartela';
-    botao.removeAttribute('style');
-  });
+  atualizarContadorCartelas();
+  const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
+  botoes.forEach(botao => {
+    botao.textContent = 'Selecionar';
+    botao.className = 'btn-cartela';
+    botao.removeAttribute('style');
+  });
 });
 </script>
 <button id="btnPremios" class="cursor_m" onclick="mostrarPremios()"
- style="position:fixed; bottom:90px; left:25px; z-index:9999; background-color:#ffc107; color:black;
- font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
- 🏆 Prêmios
+ style="position:fixed; bottom:90px; left:25px; z-index:9999; background-color:#ffc107; color:black;
+ font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
+ 🏆 Prêmios
 </button>
 <button id="finalizarCompra" onclick="abrirFormularioCompra()" disabled
- style="position:fixed; bottom:25px; left:25px; z-index:9999; background-color:green; color:white;
- font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
- 🛒 Finalizar Compra
+ style="position:fixed; bottom:25px; left:25px; z-index:9999; background-color:green; color:white;
+ font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
+ 🛒 Finalizar Compra
 </button>
 </body>
 </html>
