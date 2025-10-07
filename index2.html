@@ -26,8 +26,8 @@
 <meta name="language" content="pt-BR" />
 <meta name="rating" content="general" />
 <meta name="distribution" content="global" /> 
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+</head>
+<script>
 const premiosTexto = `1.Prêmio: Chaleira elétrica
 2.Prêmio: Chaleira elétrica
 3.Prêmio: Cafeteira
@@ -45,9 +45,7 @@ const premiosTexto = `1.Prêmio: Chaleira elétrica
 15.Prêmio: Bike 21 marchas
 
 + PREMIOS EXTRAS`;
-</script>
-  </head>
-<script>
+
 var numCartelaEsc = "";
  var BlocoCartela='1 ao 500'
 function CopiarPix(){
@@ -55,22 +53,7 @@ var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
 document.execCommand('copy');
 alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar também o COMPROVANTE.' )}
-function mostrarPremios() {
-    Swal.fire({
-      title: '🏆 Lista de Prêmios',
-      html: premiosTexto.replace(/\n/g, "<br>"),
-      width: 600,
-      padding: '20px',
-      confirmButtonText: 'Fechar',
-      backdrop: true,
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    });
-  }
+function mostrarPremios() { alert(premiosTexto); }
 function mostrarForm(tipo, cartela) {
 if (tipo=='mostrar') {
 document.getElementById('ModalForm').style.display ='block';
