@@ -158,14 +158,35 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 </style>
 <body style="background-color:white; color:black; margin-top:30px;" onload="mostrarForm('fechar')">
 
-<header style="text-align:center; margin-bottom:20px;">
-  <h2 style="font-family:Arial; white-space:pre-line;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛
-
-Sorteio: 26/10/2025 às 14:00</h2>
-  <p>Escaneie o QR Code abaixo para pagamento via PIX:</p>
-  <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=https%3A%2F%2Fcobranca.c6pix.com.br%2F01K6Y302N5E5MZBYRE18A2RX0W" alt="QR Code PIX" width="200" height="200" style="border-radius:10px; border:2px solid #ccc;">
-  <hr style="margin-top:20px;">
+<header style="text-align:center; margin-bottom:25px;">
+  <h2 style="font-family:Arial;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛</h2>
+  <p style="font-weight:bold;">Sorteio: 26/10/2025 às 14:00</p>
+  <p>Escaneie o QR Code abaixo ou clique no botão para abrir a página do pagamento:</p>
+  <iframe src="https://cobranca.c6pix.com.br/01K6Y302N5E5MZBYRE18A2RX0W" width="320" height="480" style="border:2px solid #ccc; border-radius:10px;"></iframe>
+  <br><br>
+  <a href="https://cobranca.c6pix.com.br/01K6Y302N5E5MZBYRE18A2RX0W" target="_blank" style="background-color:#f5c518; color:black; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">🔗 Abrir página do QR Code</a>
+  <br><br>
+  <div style="max-width:600px; margin:0 auto; background:#f9f9f9; border:1px solid #ccc; padding:10px; border-radius:8px;">
+    <p style="margin-bottom:8px; font-weight:bold;">Pix Copia e Cola:</p>
+    <textarea id="pixCode" readonly style="width:95%; height:80px; resize:none; font-size:12px; padding:6px; border:1px solid #bbb; border-radius:6px;">0002010102126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON L S FERNANDES6008BIGUACU62070503***63043EE0</textarea>
+    <br>
+    <button id="btnCopiarPix" onclick="copiarPix()" style="background-color:#198754; color:white; padding:8px 16px; border:none; border-radius:8px; margin-top:5px; cursor:pointer;">📋 Copiar código PIX</button>
+  </div>
+  <hr style="margin-top:25px;">
 </header>
+<script>
+function copiarPix() {
+  var textarea = document.getElementById("pixCode");
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  var btn = document.getElementById("btnCopiarPix");
+  var original = btn.innerText;
+  btn.innerText = "✅ Copiado!";
+  setTimeout(() => { btn.innerText = original; }, 2000);
+  alert("Código PIX copiado com sucesso!");
+}
+</script>
 
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
 <div id="ModalForm" style="display:block; color:blue;">
