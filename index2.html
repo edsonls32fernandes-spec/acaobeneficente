@@ -14345,23 +14345,9 @@ var cartelasSelecionadas = [];
 let valor = 0;
 
 function alternarCartela(numero) {
-  var btn = document.querySelector('button[id="btnCartela_' + numero + '"]');
-  if (!btn) return;
-
   var idx = cartelasSelecionadas.indexOf(numero);
-  if (idx >= 0) {
-    // Já estava selecionada → desmarcar
-    cartelasSelecionadas.splice(idx, 1);
-    btn.style.backgroundColor = '#007bff';
-    btn.style.color = 'white';
-    btn.innerHTML = 'Selecionar';
-  } else {
-    // Nova seleção
-    cartelasSelecionadas.push(numero);
-    btn.style.backgroundColor = 'green';
-    btn.style.color = 'white';
-    btn.innerHTML = '✅ Selecionada';
-  }
+  if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
+  else cartelasSelecionadas.push(numero);
   atualizarContadorCartelas();
 }
 
