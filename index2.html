@@ -171,37 +171,15 @@ text-transform: uppercase;
 </header>
 <script>
 function copiarPix() {
-  // Código base PIX Copia e Cola (fixo)
-  let pixBase = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
-
-  // Garante que 'valor' exista e é um número válido
-  let valorPix = (typeof valor !== "undefined" && !isNaN(valor)) ? valor.toFixed(2) : "0.00";
-
-  // Monta o campo 54 (valor da transação)
-  let campo54 = "54" + valorPix.length.toString().padStart(2, "0") + valorPix;
-
-  if (/54d{2}d+/.test(pixBase)) {
-    // Se já houver um campo 54, substitui
-    pixBase = pixBase.replace(/54d{2}d+/, campo54);
-  } else if (/5802/i.test(pixBase)) {
-    // Caso não haja, insere o campo 54 antes de "5802"
-    pixBase = pixBase.replace(/5802/i, campo54 + "5802");
-  } else {
-    // Caso extremo: se o campo 58 também não existir (muito raro)
-    pixBase += campo54;
-  }
-
-  // Copia o código atualizado
-  navigator.clipboard.writeText(pixBase).then(function() {
+  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
+  navigator.clipboard.writeText(texto).then(function() {
     var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
     if (btn) {
       var original = btn.innerText;
       btn.innerText = "✅ Copiado!";
       setTimeout(() => { btn.innerText = original; }, 2000);
     }
-    alert("Código PIX copiado com sucesso! Valor incluído: R$ " + valorPix.replace('.', ','));
-  }).catch(function() {
-    alert("Não foi possível copiar o código PIX.");
+    alert("Código PIX copiado com sucesso!");
   });
 }
 </script>
