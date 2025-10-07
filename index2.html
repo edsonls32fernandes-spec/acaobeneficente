@@ -14347,21 +14347,16 @@ function copiarPix() {
 var cartelasSelecionadas = [];
 let valor = 0;
 
-function alternarCartela(numero) {
-  var btn = document.getElementById('btnCartela_' + numero);
+function alternarCartela(botao, numero) {
   var idx = cartelasSelecionadas.indexOf(numero);
   if (idx >= 0) {
     cartelasSelecionadas.splice(idx, 1);
-    if (btn) {
-      btn.classList.remove('selecionada');
-      btn.innerHTML = "Selecionar";
-    }
+    botao.classList.remove('selecionada');
+    botao.innerHTML = "Selecionar";
   } else {
     cartelasSelecionadas.push(numero);
-    if (btn) {
-      btn.classList.add('selecionada');
-      btn.innerHTML = "✅ Selecionado";
-    }
+    botao.classList.add('selecionada');
+    botao.innerHTML = "✅ Selecionado";
   }
   atualizarContadorCartelas();
 }
