@@ -172,8 +172,7 @@ text-transform: uppercase;
 <script>
 function copiarPix() {
   var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
-  var pixComValor = texto.replace("5802BR", "540" + valor.length + valor + "5802BR");
-  navigator.clipboard.writeText(pixComValor).then(function() {
+  navigator.clipboard.writeText(texto).then(function() {
     var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
     if (btn) {
       var original = btn.innerText;
@@ -14381,8 +14380,8 @@ function enviarMensagem(){
 function atualizarContadorCartelas() {
   const botao = document.getElementById('finalizarCompra');
   if (!botao) return;
-  var total = cartelasSelecionadas.length;
-  var valor = total * 10;
+  const total = cartelasSelecionadas.length;
+  const valor = total * 10;
   if (total > 0) {
     botao.textContent = 'Finalizar Compra (' + total + ' cartela' + (total>1?'s':'') + ' - R$ ' + valor.toFixed(2).replace('.', ',') + ')';
     botao.disabled = false;
