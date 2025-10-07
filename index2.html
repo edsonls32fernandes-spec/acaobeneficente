@@ -14352,14 +14352,12 @@ function alternarCartela(numero) {
   var botao = document.getElementById('btnCartela_' + numero);
 
   if (idx >= 0) {
-    // desselecionar
     cartelasSelecionadas.splice(idx, 1);
     if (botao) {
       botao.classList.remove('selecionada');
       botao.innerHTML = 'Selecionar';
     }
   } else {
-    // selecionar
     cartelasSelecionadas.push(numero);
     if (botao) {
       botao.classList.add('selecionada');
