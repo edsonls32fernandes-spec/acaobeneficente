@@ -214,37 +214,45 @@ function copiarPix() {
 </script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
 
-<div id="ModalForm" style="display:none; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:9999;">
-  <div style="background:white; padding:25px; border-radius:20px; box-shadow:0 0 15px rgba(0,0,0,0.3); width:90%; max-width:360px; font-family:Arial;">
-    <h3 style="text-align:center; color:#004080;">Preencha os dados</h3>
-    <div style="text-align:center; margin-bottom:10px;">Cartela(s): <span id="numcart" style="font-weight:bold; color:#004080;">0000</span></div>
+<div id="ModalForm" style="display:none; justify-content:center; align-items:center; position:fixed; inset:0; background-color:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:white; padding:25px 25px 30px 25px; border-radius:20px; box-shadow:0 4px 18px rgba(0,0,0,0.35); width:90%; max-width:380px; font-family:Arial; box-sizing:border-box; text-align:left;">
+    <h3 style="text-align:center; color:#222; margin-top:0; margin-bottom:20px;">Preencha os dados</h3>
+    <div style="text-align:center; margin-bottom:15px;">Cartela(s): <span id="numcart" style="font-weight:bold; color:#004080;">0000</span></div>
     
     <label>Nome</label><br>
-    <input type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:8px;"><br>
+    <input type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" 
+      style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
     <label>Endereço</label><br>
-    <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:8px;"><br>
+    <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" 
+      style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
     <label>Cidade / UF</label><br>
-    <div style="display:flex; gap:10px; margin-bottom:10px;">
-      <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" style="flex:1; padding:8px; border:1px solid #ccc; border-radius:8px;">
-      <input type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" style="width:50px; padding:8px; border:1px solid #ccc; border-radius:8px;">
+    <div style="display:flex; gap:10px; margin-bottom:12px;">
+      <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" 
+        style="flex:1; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
+      <input type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" 
+        style="width:60px; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
     </div>
 
     <label>DDD + Celular</label><br>
-    <input type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;"><br>
+    <input type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" 
+      style="width:100%; padding:10px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
-    <div style="text-align:center; margin-bottom:15px;">
-      <button id="btnCopiarPixForm" onclick="copiarPix()" style="background-color:#198754; color:white; padding:10px 16px; border:none; border-radius:8px; cursor:pointer;">📋 Copiar código PIX</button>
+    <div style="text-align:center; margin-bottom:18px;">
+      <button id="btnCopiarPixForm" onclick="copiarPix()" 
+        style="background-color:#198754; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer; font-size:15px;">📋 Copiar código PIX</button>
     </div>
 
-    <div style="font-size:12px; color:#333; margin-bottom:20px; text-align:center;">
-      Obs.: Caso a cartela escolhida não esteja mais disponível para venda, o sistema escolherá outra automaticamente.
+    <div style="font-size:12px; color:#555; margin-bottom:25px; text-align:center; line-height:1.4;">
+      Obs.: Caso alguma cartela não esteja disponível, o sistema escolherá outra automaticamente.
     </div>
 
     <div style="display:flex; justify-content:space-between;">
-      <button onclick="mostrarForm('fechar','')" style="background-color:#6c757d; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Voltar</button>
-      <button onclick="enviarMensagem();GravarDadosLocal()" style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
+      <button onclick="mostrarForm('fechar','')" 
+        style="background-color:#6c757d; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Voltar</button>
+      <button onclick="enviarMensagem();GravarDadosLocal()" 
+        style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
     </div>
   </div>
 </div>
