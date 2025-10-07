@@ -202,42 +202,54 @@ box-shadow: 4px 7px rgb(113, 112, 111)
 function copiarPix() {
   var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
   navigator.clipboard.writeText(texto).then(function() {
-    var btn = document.getElementById("btnCopiarPix");
-    var original = btn.innerText;
-    btn.innerText = "✅ Copiado!";
-    setTimeout(() => { btn.innerText = original; }, 2000);
+    var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
+    if (btn) {
+      var original = btn.innerText;
+      btn.innerText = "✅ Copiado!";
+      setTimeout(() => { btn.innerText = original; }, 2000);
+    }
     alert("Código PIX copiado com sucesso!");
   });
 }
 </script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
-<div id="ModalForm" style="display:block; color:blue;">
-<div id="preencha" style="text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 2.3" ><B>PREENCHA OS DADOS</B></div>
-<form id="FormComprador" style="font-family: Arial, Helvetica, sans-serif; margin: 5px;">
-<p>
-<div style="font-family: Arial, Helvetica, sans-serif; size: 2px; text-align: center;color: red;">Cartela Nº <span id="numcart"> 0000</span></div>
-<label for="nomeCP"  style="font-size: 14px;">NOME</label>
-<input type="text" onfocus="RecuperarDados('entrouNome')"  id="nomeCP" onblur="Maiuscula('nomeCP')" maxlength="50" style="width: 270px;" /><br><br>
-<label for="enderecoCP" style="font-size: 14px;">ENDEREÇO</label>
-<input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')"   maxlength="50" style="width: 270px;"/><br><br>
-<label for="cidadeCP" style="font-size: 14px;">CIDADE</label><br>
-<input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" style="width: 200px;"/> <label for="ufCP" style="font-size: 14px;">UF</label> <input type ="text"  onblur="Maiuscula('ufCP')" maxlength="2"  id="ufCP" style="width: 25px;"/><br><br>
-<label for="N_celularCP" style="font-size: 14px;">DDD+Nº Celular</label> &nbsp&nbsp&nbsp <Strong> PIX:</Strong><span style="color: red;" >Celular</span>&nbsp&nbsp<button class="cursor_m" type="button" style="background-color: aqua; border-radius: 5px;  border-color:darkgrey; font-size: 12px;"  onclick="CopiarPix()" >&nbsp Copiar&nbsp</button>
-<input type="tel" size="11"  id="N_celularCP"  maxlength="15"  onkeyup="handlePhone(event)"/>
-&nbsp&nbsp&nbsp<textarea id="ChavePix" rows="1" cols="18"  readonly="readonly" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; resize:none; background-color: transparent;border:0;margin-left:-10px; height: 12px; ">48996040827</textarea> </br>
-<br>
-<div style="font-family: Arial, Helvetica, sans-serif;font-size: 10px;color: black;">
-  Obs.: Caso a cartela escolhida não esteja mais disponível para venda, o sistema escolherá outra automaticamente.
-<br>
-<br>
-<br>
-</div>
-<div style="text-align: center;">
-<button class="cursor_m" type="button"  onclick="mostrarForm('fechar','')" ><font size="3" face="arial">&nbsp Voltar &nbsp</font></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="cursor_m" type="button"  onclick="enviarMensagem();GravarDadosLocal()"><font size="3" face="arial"> Enviar</font></button><br>
-</div>
-</form>
+
+<div id="ModalForm" style="display:none; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:white; padding:25px; border-radius:20px; box-shadow:0 0 15px rgba(0,0,0,0.3); width:90%; max-width:360px; font-family:Arial;">
+    <h3 style="text-align:center; color:#004080;">Preencha os dados</h3>
+    <div style="text-align:center; margin-bottom:10px;">Cartela(s): <span id="numcart" style="font-weight:bold; color:#004080;">0000</span></div>
+    
+    <label>Nome</label><br>
+    <input type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:8px;"><br>
+
+    <label>Endereço</label><br>
+    <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:8px;"><br>
+
+    <label>Cidade / UF</label><br>
+    <div style="display:flex; gap:10px; margin-bottom:10px;">
+      <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" style="flex:1; padding:8px; border:1px solid #ccc; border-radius:8px;">
+      <input type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" style="width:50px; padding:8px; border:1px solid #ccc; border-radius:8px;">
+    </div>
+
+    <label>DDD + Celular</label><br>
+    <input type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;"><br>
+
+    <div style="text-align:center; margin-bottom:15px;">
+      <button id="btnCopiarPixForm" onclick="copiarPix()" style="background-color:#198754; color:white; padding:10px 16px; border:none; border-radius:8px; cursor:pointer;">📋 Copiar código PIX</button>
+    </div>
+
+    <div style="font-size:12px; color:#333; margin-bottom:20px; text-align:center;">
+      Obs.: Caso a cartela escolhida não esteja mais disponível para venda, o sistema escolherá outra automaticamente.
+    </div>
+
+    <div style="display:flex; justify-content:space-between;">
+      <button onclick="mostrarForm('fechar','')" style="background-color:#6c757d; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Voltar</button>
+      <button onclick="enviarMensagem();GravarDadosLocal()" style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
+    </div>
+  </div>
 </div>
 <!-- Inicio da cartela -->
+
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
@@ -14617,8 +14629,8 @@ function abrirFormularioCompra(){
   }
   var modal=document.getElementById('ModalForm');
   if(!modal){alert('Formulário não encontrado.');return;}
-  modal.style.display='block';
-  document.getElementById('numcart').innerHTML='<b>'+cartelasSelecionadas.join(' - ')+'</b><br><br>';
+  modal.style.display='flex';
+  document.getElementById('numcart').innerHTML='<b>'+cartelasSelecionadas.join(' - ')+'</b>';
   numCartelaEsc=cartelasSelecionadas.join(' - ');
 }
 
@@ -14627,7 +14639,12 @@ function enviarMensagem(){
   var endC=document.getElementById('enderecoCP').value||'';
   var CidadeUfC=(document.getElementById('cidadeCP').value||'')+'/'+(document.getElementById('ufCP').value||'');
   var numCelC=document.getElementById('N_celularCP').value||'';
-  var texto='*Desejo comprar as seguintes cartelas:* '+numCartelaEsc+'\n*Nome:* '+nomeC+'\n*End.:* '+endC+'\n*Cidade:* '+CidadeUfC+'\n*Fone:* '+numCelC+'\n*Bloco Cart:* '+BlocoCartela;
+  var cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
+  var partes = cartelas.map(c => 
+    '*Cartela:* ' + c + '\n*Nome:* ' + nomeC + '\n*End.:* ' + endC + 
+    '\n*Cidade:* ' + CidadeUfC + '\n*Fone:* ' + numCelC + '\n*Bloco Cart:* ' + BlocoCartela
+  );
+  var texto = partes.join('\n\n');
   texto=window.encodeURIComponent(texto);
   window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto,'_blank');
 }
@@ -14649,7 +14666,6 @@ function atualizarContadorCartelas() {
   }
 }
 
-// Atualiza todos os botões de cartela para o novo estilo azul
 document.addEventListener('DOMContentLoaded', function() {
   atualizarContadorCartelas();
   const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
@@ -14661,9 +14677,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <button id="btnPremios" class="cursor_m" onclick="mostrarPremios()"
- style="position:fixed; bottom:90px; left:25px; z-index:9999; background-color:#ffc107; color:black;
- font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
- 🏆 Prêmios
+  style="position:fixed; bottom:90px; left:25px; z-index:9999; background-color:#ffc107; color:black;
+  font-size:16px; border:none; padding:15px 25px; border-radius:12px; box-shadow:2px 3px 6px rgba(0,0,0,0.3);">
+  🏆 Prêmios
 </button>
 <button id="finalizarCompra" onclick="abrirFormularioCompra()" disabled
  style="position:fixed; bottom:25px; left:25px; z-index:9999; background-color:green; color:white;
