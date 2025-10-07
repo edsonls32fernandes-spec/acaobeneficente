@@ -171,15 +171,28 @@ text-transform: uppercase;
 </header>
 <script>
 function copiarPix() {
-  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
-  navigator.clipboard.writeText(texto).then(function() {
+  // Código base PIX Copia e Cola
+  let pixBase = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
+
+  // Garante que 'valor' exista e é um número
+  let valorPix = (typeof valor !== "undefined" && !isNaN(valor)) ? valor.toFixed(2) : "0.00";
+
+  // Atualiza o campo 54 (valor da transação) dentro do Pix Copia e Cola
+  // Campo 54 tem o formato: 54{len}{valor}, onde len = número de dígitos do valor
+  let novoCampo54 = "54" + valorPix.length.toString().padStart(2, "0") + valorPix;
+  pixBase = pixBase.replace(/54d{2}d+/, novoCampo54);
+
+  // Copia o texto atualizado
+  navigator.clipboard.writeText(pixBase).then(function() {
     var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
     if (btn) {
       var original = btn.innerText;
       btn.innerText = "✅ Copiado!";
       setTimeout(() => { btn.innerText = original; }, 2000);
     }
-    alert("Código PIX copiado com sucesso!");
+    alert("Código PIX copiado com sucesso! Valor incluído: R$ " + valorPix.replace('.', ','));
+  }).catch(function() {
+    alert("Não foi possível copiar o código PIX.");
   });
 }
 </script>
@@ -14342,6 +14355,7 @@ function copiarPix() {
 
 <script>
 var cartelasSelecionadas = [];
+let valor = 0;
 
 function alternarCartela(numero) {
   var idx = cartelasSelecionadas.indexOf(numero);
@@ -14380,8 +14394,8 @@ function enviarMensagem(){
 function atualizarContadorCartelas() {
   const botao = document.getElementById('finalizarCompra');
   if (!botao) return;
-  const total = cartelasSelecionadas.length;
-  const valor = total * 10;
+  var total = cartelasSelecionadas.length;
+  valor = total * 10;
   if (total > 0) {
     botao.textContent = 'Finalizar Compra (' + total + ' cartela' + (total>1?'s':'') + ' - R$ ' + valor.toFixed(2).replace('.', ',') + ')';
     botao.disabled = false;
