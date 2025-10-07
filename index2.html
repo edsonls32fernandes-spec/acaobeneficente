@@ -212,58 +212,33 @@ function copiarPix() {
 }
 </script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
-
-<div id="ModalForm" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
-  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
-  
-  <div style="background:white; padding:25px 25px 30px 25px; border-radius:20px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.35); width:90%; max-width:380px;
-    font-family:Arial, sans-serif; box-sizing:border-box; text-align:left;">
-    
-    <h3 style="text-align:center; color:#222; margin-top:0; margin-bottom:20px;">Preencha os dados</h3>
-    <div style="text-align:center; margin-bottom:15px;">Cartela(s): 
-      <span id="numcart" style="font-weight:bold; color:#004080;">0000</span>
-    </div>
-    
-    <label>Nome</label><br>
-    <input type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" 
-      style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
-
-    <label>Endereço</label><br>
-    <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" 
-      style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
-
-    <label>Cidade / UF</label><br>
-    <div style="display:flex; gap:10px; margin-bottom:12px;">
-      <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" 
-        style="flex:1; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
-      <input type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" 
-        style="width:60px; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
-    </div>
-
-    <label>DDD + Celular</label><br>
-    <input type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" 
-      style="width:100%; padding:10px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
-
-    <div style="text-align:center; margin-bottom:18px;">
-      <button id="btnCopiarPixForm" onclick="copiarPix()" 
-        style="background-color:#198754; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer; font-size:15px;">📋 Copiar código PIX</button>
-    </div>
-
-    <div style="font-size:12px; color:#555; margin-bottom:25px; text-align:center; line-height:1.4;">
-      Obs.: Caso alguma cartela não esteja disponível, o sistema escolherá outra automaticamente.
-    </div>
-
-    <div style="display:flex; justify-content:space-between;">
-      <button onclick="mostrarForm('fechar','')" 
-        style="background-color:#6c757d; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Voltar</button>
-      <button onclick="enviarMensagem();GravarDadosLocal()" 
-        style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
-    </div>
-  </div>
+<div id="ModalForm" style="display:block; color:blue;">
+<div id="preencha" style="text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 2.3" ><B>PREENCHA OS DADOS</B></div>
+<form id="FormComprador" style="font-family: Arial, Helvetica, sans-serif; margin: 5px;">
+<p>
+<div style="font-family: Arial, Helvetica, sans-serif; size: 2px; text-align: center;color: red;">Cartela Nº <span id="numcart"> 0000</span></div>
+<label for="nomeCP"  style="font-size: 14px;">NOME</label>
+<input type="text" onfocus="RecuperarDados('entrouNome')"  id="nomeCP" onblur="Maiuscula('nomeCP')" maxlength="50" style="width: 270px;" /><br><br>
+<label for="enderecoCP" style="font-size: 14px;">ENDEREÇO</label>
+<input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')"   maxlength="50" style="width: 270px;"/><br><br>
+<label for="cidadeCP" style="font-size: 14px;">CIDADE</label><br>
+<input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" style="width: 200px;"/> <label for="ufCP" style="font-size: 14px;">UF</label> <input type ="text"  onblur="Maiuscula('ufCP')" maxlength="2"  id="ufCP" style="width: 25px;"/><br><br>
+<label for="N_celularCP" style="font-size: 14px;">DDD+Nº Celular</label> &nbsp&nbsp&nbsp <Strong> PIX:</Strong><span style="color: red;" >Celular</span>&nbsp&nbsp<button class="cursor_m" type="button" style="background-color: aqua; border-radius: 5px;  border-color:darkgrey; font-size: 12px;"  onclick="CopiarPix()" >&nbsp Copiar&nbsp</button>
+<input type="tel" size="11"  id="N_celularCP"  maxlength="15"  onkeyup="handlePhone(event)"/>
+&nbsp&nbsp&nbsp<textarea id="ChavePix" rows="1" cols="18"  readonly="readonly" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; resize:none; background-color: transparent;border:0;margin-left:-10px; height: 12px; ">48996040827</textarea> </br>
+<br>
+<div style="font-family: Arial, Helvetica, sans-serif;font-size: 10px;color: black;">
+  Obs.: Caso a cartela escolhida não esteja mais disponível para venda, o sistema escolherá outra automaticamente.
+<br>
+<br>
+<br>
+</div>
+<div style="text-align: center;">
+<button class="cursor_m" type="button"  onclick="mostrarForm('fechar','')" ><font size="3" face="arial">&nbsp Voltar &nbsp</font></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="cursor_m" type="button"  onclick="enviarMensagem();GravarDadosLocal()"><font size="3" face="arial"> Enviar</font></button><br>
+</div>
+</form>
 </div>
 <!-- Inicio da cartela -->
-
 <div  class="content">
 <table width="290"  height="303" border="0"  style="margin-left: 10px; margin: 0 auto;border: 15px solid rgba(137, 139, 154, 0.626);border-radius: 20px;  border-radius: 20px;box-shadow: 4px 7px rgb(133, 139, 134);">
     <tr>
