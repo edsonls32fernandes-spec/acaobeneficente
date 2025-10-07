@@ -2,6 +2,23 @@
 <!doctype html>
 <html>
 <head>
+
+<style>
+.btn-cartela {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-cartela:hover { background-color: #0056b3; }
+.btn-cartela.selecionada { background-color: #004080; }
+</style>
 <meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -14591,11 +14608,8 @@ var cartelasSelecionadas = [];
 
 function alternarCartela(numero) {
   var idx = cartelasSelecionadas.indexOf(numero);
-  if (idx >= 0) {
-    cartelasSelecionadas.splice(idx, 1);
-  } else {
-    cartelasSelecionadas.push(numero);
-  }
+  if (idx >= 0) cartelasSelecionadas.splice(idx, 1);
+  else cartelasSelecionadas.push(numero);
   atualizarContadorCartelas();
 }
 
@@ -14637,7 +14651,17 @@ function atualizarContadorCartelas() {
     botao.style.cursor = 'not-allowed';
   }
 }
-document.addEventListener('DOMContentLoaded', atualizarContadorCartelas);
+
+// Atualiza todos os botões de cartela para o novo estilo azul
+document.addEventListener('DOMContentLoaded', function() {
+  atualizarContadorCartelas();
+  const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
+  botoes.forEach(botao => {
+    botao.textContent = 'Selecionar';
+    botao.className = 'btn-cartela';
+    botao.removeAttribute('style');
+  });
+});
 </script>
 <button id="finalizarCompra" onclick="abrirFormularioCompra()" disabled
  style="position:fixed; bottom:25px; left:25px; z-index:9999; background-color:green; color:white;
