@@ -14347,18 +14347,21 @@ function copiarPix() {
 var cartelasSelecionadas = [];
 let valor = 0;
 
-function alternarCartela(botao, numero) {
+function alternarCartela(numero) {
+  var btn = document.getElementById('btnCartela_' + numero);
   var idx = cartelasSelecionadas.indexOf(numero);
   if (idx >= 0) {
     cartelasSelecionadas.splice(idx, 1);
-    botao.classList.remove('selecionada');
-    botao.style.backgroundColor = '#007bff';
-    botao.innerHTML = "Selecionar";
+    if (btn) {
+      btn.classList.remove('selecionada');
+      btn.innerHTML = "Selecionar";
+    }
   } else {
     cartelasSelecionadas.push(numero);
-    botao.classList.add('selecionada');
-    botao.style.backgroundColor = 'green';
-    botao.innerHTML = "✅ Selecionado";
+    if (btn) {
+      btn.classList.add('selecionada');
+      btn.innerHTML = "✅ Selecionado";
+    }
   }
   atualizarContadorCartelas();
 }
@@ -14410,11 +14413,11 @@ function atualizarContadorCartelas() {
 
 document.addEventListener('DOMContentLoaded', function() {
   atualizarContadorCartelas();
-  const botoes = document.querySelectorAll('button[data-cartela]');
+  const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
   botoes.forEach(botao => {
-    const numero = botao.getAttribute('data-cartela');
-    botao.classList.add('btn-cartela');
-    botao.onclick = function() { alternarCartela(this, numero); };
+    botao.textContent = 'Selecionar';
+    botao.className = 'btn-cartela';
+    botao.removeAttribute('style');
   });
 });
 </script>
