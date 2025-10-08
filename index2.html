@@ -289,7 +289,7 @@ function copiarPix() {
         <button id="btnCopiarPixForm" onclick="copiarPix()" 
           style="background-color:#198754; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer; font-size:15px;">📋 Copiar código PIX</button>
 
-        <button id="btnEnviarPix" onclick="enviarMensagem();GravarDadosLocal()" disabled
+        <button title="Preencha corretamente todos os campos ⚠️" id="btnEnviarPix" onclick="enviarMensagem();GravarDadosLocal()" disabled
           style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:not-allowed; opacity:0.5;">
           Enviar
         </button>
@@ -14470,11 +14470,11 @@ document.addEventListener('DOMContentLoaded', function() {
       botaoEnviar.disabled = false;
       botaoEnviar.style.cursor = "pointer";
       botaoEnviar.style.opacity = "1";
+      botaoEnviar.title = "";
     } else {
       botaoEnviar.disabled = true;
       botaoEnviar.style.cursor = "not-allowed";
       botaoEnviar.style.opacity = "0.5";
-      botaoEnviar.title = "Preencha corretamente todos os campos ⚠️";
     }
   }
 
