@@ -307,7 +307,7 @@ function copiarPix() {
         </select>
       </div>
 
-      <input placeholder="DDD + Celular" type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" 
+      <input placeholder="DDD + Celular" type="tel" id="N_celularCP" maxlength="15" 
         style="width:94%; padding:10px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
       <div style="text-align:center; margin-bottom:18px;">
@@ -14454,28 +14454,6 @@ window.validarCampos = function() {
     }
 };
 
-window.handlePhone = function handlePhone(event) {
-    const input = event.target;
-    let valor = input.value.replace(/D/g, ""); // remove tudo que não for número
-
-    if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
-
-    if (valor.length > 10) {
-      // Formato (99) 99999-9999
-      valor = valor.replace(/^(d{2})(d{5})(d{4}).*/, "($1) $2-$3");
-    } else if (valor.length > 6) {
-      // Formato (99) 9999-9999
-      valor = valor.replace(/^(d{2})(d{4})(d{0,4}).*/, "($1) $2-$3");
-    } else if (valor.length > 2) {
-      valor = valor.replace(/^(d{2})(d{0,5})/, "($1) $2");
-    } else {
-      valor = valor.replace(/^(d*)/, "($1");
-    }
-
-    input.value = valor;
-    validarCampos(); // revalida sempre que digita
-  }
-
 function Maiuscula(idCampo) {
     const el = document.getElementById(idCampo);
     if (el && el.value) {
@@ -14550,7 +14528,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const tel = document.getElementById("N_celularCP");
-  if (tel) tel.addEventListener("keyup", handlePhone);
 
   const infoIcon = document.getElementById("infoIcon");
   const tooltip = document.getElementById("tooltipText");
