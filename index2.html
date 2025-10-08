@@ -129,19 +129,6 @@ text-transform: uppercase;
     <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5; font-family: Arial, sans-serif;"></pre>
   </div>
 </div>
-<script>
-function copiarPix() {
-  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
-  navigator.clipboard.writeText(texto).then(function() {
-    var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
-    if (btn) {
-      var original = btn.innerText;
-      btn.innerText = "✅ Copiado!";
-      setTimeout(() => { btn.innerText = original; }, 2000);
-    }
-  });
-}
-</script>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
 
 <div id="ModalForm" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
@@ -14355,6 +14342,18 @@ function copiarPix() {
 <br>
 
 <script>
+
+function copiarPix() {
+  var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
+  navigator.clipboard.writeText(texto).then(function() {
+    var btn = document.getElementById("btnCopiarPix") || document.getElementById("btnCopiarPixForm");
+    if (btn) {
+      var original = btn.innerText;
+      btn.innerText = "✅ Copiado!";
+      setTimeout(() => { btn.innerText = original; }, 2000);
+    }
+  });
+}
 
 const phoneMask = (value) => { 
   if (!value) return "";
