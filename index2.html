@@ -14380,15 +14380,21 @@ function copiarPix() {
 
 <script>
 
-const camposObrigatorios = [
-    "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
-  ];
+const camposObrigatorios = ["nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"];
   const botaoEnviar = document.getElementById("btnEnviarPix");
 
-  // Função para checar se todos os campos estão preenchidos
+  // Expressão regular: (XX) 9XXXX-XXXX, mas aceita variações sem formatação
+  const regexCelular = /^((?d{2})?s?)?(9d{4}[-s]?d{4})$/;
+
   function validarCampos() {
     const todosPreenchidos = camposObrigatorios.every(id => {
-      const valor = document.getElementById(id).value.trim();
+      const campo = document.getElementById(id);
+      const valor = campo.value.trim();
+
+      if (id === "N_celularCP") {
+        // valida formato do celular
+        return regexCelular.test(valor);
+      }
       return valor.length > 0;
     });
 
@@ -14403,7 +14409,7 @@ const camposObrigatorios = [
     }
   }
 
-  // Monitorar alterações em todos os inputs
+  // Monitora alterações em todos os inputs
   camposObrigatorios.forEach(id => {
     document.getElementById(id).addEventListener("input", validarCampos);
   });
