@@ -58,16 +58,7 @@ const premiosTexto = `1.Prêmio: Chaleira elétrica
 + PREMIOS EXTRAS`;
 
 var numCartelaEsc = "";
- var BlocoCartela='1 ao 500'
-function CopiarPix(){
-var MinhaChave = document.getElementById("ChavePix");
-MinhaChave.select();
-document.execCommand('copy');
-alert('Pix Copiado com Sucesso! Mas ENVIE antes os dados preenchidos aqui,  para em seguida COLAR o PIX no aplicativo e posteriormente enviar também o COMPROVANTE.' )}
-function mostrarPremios() { alert(premiosTexto); }
-function mostrarForm(tipo, cartela) {
-if (tipo=='mostrar') {
-document.getElementById('ModalForm').style.display ='block';
+ 
 document.getElementById('numcart').innerHTML ='<b>'+cartela+'</b><br><br>';
 numCartelaEsc=cartela;
 }
@@ -14487,7 +14478,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let cartelasSelecionadas = [];
   let valor = 0;
   let numCartelaEsc = "";
-  let BlocoCartelas = ""; // define variável global usada no texto do WhatsApp
 
   window.alternarCartela = function(numero) {
     const btn = document.getElementById('btnCartela_' + numero);
