@@ -14427,6 +14427,31 @@ function copiarPix() {
 
 <script>
 
+window.validarCampos = function() {
+    const camposObrigatorios = [
+        "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
+    ];
+    const botaoEnviar = document.getElementById("btnEnviarPix");
+
+    const todosPreenchidos = camposObrigatorios.every(id => {
+        const valor = document.getElementById(id).value.trim();
+        return valor.length > 0;
+    });
+    const celular = document.getElementById("N_celularCP").value.trim();
+    const celularEhValido = celular.replace(/D/g, "").length === 11;
+
+    if (todosPreenchidos && celularEhValido) {
+        botaoEnviar.disabled = false;
+        botaoEnviar.style.cursor = "pointer";
+        botaoEnviar.style.opacity = "1";
+        botaoEnviar.title = "";
+    } else {
+        botaoEnviar.disabled = true;
+        botaoEnviar.style.cursor = "not-allowed";
+        botaoEnviar.style.opacity = "0.5";
+    }
+};
+
 window.handlePhone = function(event) {
     const input = event.target;
     let valor = input.value.replace(/D/g, "");
