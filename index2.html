@@ -25,6 +25,10 @@ span[style*="position:relative; display:inline-block;"]:hover span {
   visibility: visible !important;
   opacity: 1 !important;
 }
+#infoIcon:hover #tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 <meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
@@ -210,10 +214,10 @@ function copiarPix() {
       </h3>
 
       <div style="text-align:center; margin-bottom:15px; position:relative;">
-        <!-- Ícone de informação com tooltip -->
-        <span style="position:relative; display:inline-block; margin-right:5px; cursor:pointer;">
+        <!-- Ícone de informação com tooltip (funciona em PC e celular) -->
+        <span id="infoIcon" style="position:relative; display:inline-block; margin-right:5px; cursor:pointer; font-size:18px;">
           ℹ️
-          <span style="
+          <span id="tooltipText" style="
             visibility:hidden;
             width:220px;
             background-color:#333;
@@ -266,7 +270,6 @@ function copiarPix() {
         <button onclick="enviarMensagem();GravarDadosLocal()" 
           style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
       </div>
-    </div>
   </div>
 </div>
 <!-- Inicio da cartela -->
@@ -14376,6 +14379,24 @@ function copiarPix() {
 <br>
 
 <script>
+
+/* Exibe o tooltip ao tocar no celular */
+const infoIcon = document.getElementById("infoIcon");
+const tooltip = document.getElementById("tooltipText");
+
+infoIcon.addEventListener("click", function (e) {
+  e.stopPropagation(); // evita fechar imediatamente
+  const isVisible = tooltip.style.visibility === "visible";
+  tooltip.style.visibility = isVisible ? "hidden" : "visible";
+  tooltip.style.opacity = isVisible ? "0" : "1";
+});
+
+// Fecha o tooltip ao tocar fora
+document.addEventListener("click", function () {
+  tooltip.style.visibility = "hidden";
+  tooltip.style.opacity = "0";
+});
+
 var cartelasSelecionadas = [];
 let valor = 0;
 
