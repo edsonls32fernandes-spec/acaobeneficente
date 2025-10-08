@@ -177,6 +177,15 @@ text-transform: uppercase;
 <div style="margin-top: 140px;">
 <br>
 </div>
+<div id="ModalPremios" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:12px; max-width:500px; width:90%; position:relative; text-align:left;">
+    <button onclick="fecharModalPremios()" 
+      style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
+    <h3 style="text-align:center; margin-bottom:15px;">🏆 Lista de Prêmios</h3>
+    <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5;"></pre>
+  </div>
+</div>
 <script>
 function copiarPix() {
   
@@ -14407,6 +14416,10 @@ function copiarPix() {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
+  document.getElementById('ModalPremios').addEventListener('click', function(e){
+    if (e.target === this) this.style.display = 'none';
+  });
+
   window.premiosTexto = `1.Prêmio: Chaleira elétrica
 2.Prêmio: Chaleira elétrica
 3.Prêmio: Cafeteira
@@ -14426,7 +14439,17 @@ document.addEventListener('DOMContentLoaded', function() {
 + PREMIOS EXTRAS`;
 
   window.mostrarPremios = function() {
-    alert(window.premiosTexto);
+    const modal = document.getElementById('ModalPremios');
+    const conteudo = document.getElementById('conteudoPremios');
+    if (modal && conteudo) {
+      conteudo.textContent = window.premiosTexto;
+      modal.style.display = 'flex';
+    }
+  };
+
+  window.fecharModalPremios = function() {
+    const modal = document.getElementById('ModalPremios');
+    if (modal) modal.style.display = 'none';
   };
 
   window.fecharModal = function() {
