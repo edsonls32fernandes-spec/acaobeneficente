@@ -14498,7 +14498,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let cartelasSelecionadas = [];
   let valor = 0;
   let numCartelaEsc = "";
-  let BlocoCartela = ""; // define variável global usada no texto do WhatsApp
 
   window.alternarCartela = function(numero) {
     const btn = document.getElementById('btnCartela_' + numero);
@@ -14538,8 +14537,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const numCelC = document.getElementById('N_celularCP').value || '';
     const cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
     const partes = cartelas.map(c => 
-      '*Cartela:* ' + c + '\n*Nome:* ' + nomeC + '\n*End.:* ' + endC + 
-      '\n*Cidade:* ' + CidadeUfC + '\n*Fone:* ' + numCelC + '\n*Bloco Cart:* ' + BlocoCartela
+      'Cartela: ' + c + '\nNome: ' + nomeC + '\nEnd.: ' + endC + 
+      '\nCidade: ' + CidadeUfC + '\nFone: ' + numCelC + '\nBloco Cart: ' + BlocoCartela
     );
     const texto = encodeURIComponent(partes.join('\n\n'));
     window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto, '_blank');
