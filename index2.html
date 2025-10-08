@@ -14381,42 +14381,39 @@ function copiarPix() {
 <br>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
 
   const camposObrigatorios = [
     "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
   ];
   const botaoEnviar = document.getElementById("btnEnviarPix");
 
-  // === Função para aplicar máscara no telefone ===
+  // === Máscara de telefone ===
   function handlePhone(event) {
     const input = event.target;
-    let valor = input.value.replace(/D/g, ""); // remove tudo que não for número
+    let valor = input.value.replace(/\D/g, "");
 
-    if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
+    if (valor.length > 11) valor = valor.slice(0, 11);
 
     if (valor.length > 10) {
-      // Formato (99) 99999-9999
-      valor = valor.replace(/^(d{2})(d{5})(d{4}).*/, "($1) $2-$3");
+      valor = valor.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
     } else if (valor.length > 6) {
-      // Formato (99) 9999-9999
-      valor = valor.replace(/^(d{2})(d{4})(d{0,4}).*/, "($1) $2-$3");
+      valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
     } else if (valor.length > 2) {
-      valor = valor.replace(/^(d{2})(d{0,5})/, "($1) $2");
+      valor = valor.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
     } else {
-      valor = valor.replace(/^(d*)/, "($1");
+      valor = valor.replace(/^(\d*)/, "($1");
     }
 
     input.value = valor;
-    validarCampos(); // revalida sempre que digita
+    validarCampos();
   }
 
-  // === Função para validar celular ===
   function celularValido(numero) {
-    const somenteNumeros = numero.replace(/D/g, "");
-    return somenteNumeros.length === 11; // ex: 48 99999 9999
+    const somenteNumeros = numero.replace(/\D/g, "");
+    return somenteNumeros.length === 11;
   }
 
-  // Função para checar se todos os campos estão preenchidos
   function validarCampos() {
     const todosPreenchidos = camposObrigatorios.every(id => {
       const valor = document.getElementById(id).value.trim();
@@ -14437,110 +14434,115 @@ function copiarPix() {
     }
   }
 
-  // Monitorar alterações em todos os inputs
+  // Vincula eventos de input
   camposObrigatorios.forEach(id => {
-    document.getElementById(id).addEventListener("input", validarCampos);
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("input", validarCampos);
   });
 
-// === Associar a máscara de celular ===
-document.getElementById("N_celularCP").addEventListener("keyup", handlePhone);
+  // Máscara de telefone
+  const tel = document.getElementById("N_celularCP");
+  if (tel) tel.addEventListener("keyup", handlePhone);
 
-/* Exibe o tooltip ao tocar no celular */
-const infoIcon = document.getElementById("infoIcon");
-const tooltip = document.getElementById("tooltipText");
+  // Tooltip de informação
+  const infoIcon = document.getElementById("infoIcon");
+  const tooltip = document.getElementById("tooltipText");
 
-infoIcon.addEventListener("click", function (e) {
-  e.stopPropagation(); // evita fechar imediatamente
-  const isVisible = tooltip.style.visibility === "visible";
-  tooltip.style.visibility = isVisible ? "hidden" : "visible";
-  tooltip.style.opacity = isVisible ? "0" : "1";
-});
+  if (infoIcon && tooltip) {
+    infoIcon.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const isVisible = tooltip.style.visibility === "visible";
+      tooltip.style.visibility = isVisible ? "hidden" : "visible";
+      tooltip.style.opacity = isVisible ? "0" : "1";
+    });
 
-// Fecha o tooltip ao tocar fora
-document.addEventListener("click", function () {
-  tooltip.style.visibility = "hidden";
-  tooltip.style.opacity = "0";
-});
+    document.addEventListener("click", function () {
+      tooltip.style.visibility = "hidden";
+      tooltip.style.opacity = "0";
+    });
+  }
 
-var cartelasSelecionadas = [];
-let valor = 0;
+  // Controle das cartelas
+  let cartelasSelecionadas = [];
+  let valor = 0;
+  let numCartelaEsc = "";
+  let BlocoCartela = ""; // define variável global usada no texto do WhatsApp
 
-function alternarCartela(numero) {
-  var btn = document.getElementById('btnCartela_' + numero);
-  var idx = cartelasSelecionadas.indexOf(numero);
-  if (idx >= 0) {
-    cartelasSelecionadas.splice(idx, 1);
-    if (btn) {
-      btn.classList.remove('selecionada');
-      btn.innerHTML = "Selecionar";
+  window.alternarCartela = function(numero) {
+    const btn = document.getElementById('btnCartela_' + numero);
+    const idx = cartelasSelecionadas.indexOf(numero);
+    if (idx >= 0) {
+      cartelasSelecionadas.splice(idx, 1);
+      if (btn) {
+        btn.classList.remove('selecionada');
+        btn.innerHTML = "Selecionar";
+      }
+    } else {
+      cartelasSelecionadas.push(numero);
+      if (btn) {
+        btn.classList.add('selecionada');
+        btn.innerHTML = "✅ Selecionado";
+      }
     }
-  } else {
-    cartelasSelecionadas.push(numero);
-    if (btn) {
-      btn.classList.add('selecionada');
-      btn.innerHTML = "✅ Selecionado";
+    atualizarContadorCartelas();
+  }
+
+  window.abrirFormularioCompra = function(){
+    if(cartelasSelecionadas.length === 0){
+      alert('Selecione pelo menos uma cartela para comprar.');
+      return;
+    }
+    const modal = document.getElementById('ModalForm');
+    if(!modal){alert('Formulário não encontrado.');return;}
+    modal.style.display = 'flex';
+    document.getElementById('numcart').innerHTML = '<b>'+cartelasSelecionadas.join(' - ')+'</b>';
+    numCartelaEsc = cartelasSelecionadas.join(' - ');
+  }
+
+  window.enviarMensagem = function(){
+    const nomeC = document.getElementById('nomeCP').value || '';
+    const endC = document.getElementById('enderecoCP').value || '';
+    const CidadeUfC = (document.getElementById('cidadeCP').value || '') + '/' + (document.getElementById('ufCP').value || '');
+    const numCelC = document.getElementById('N_celularCP').value || '';
+    const cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
+    const partes = cartelas.map(c => 
+      '*Cartela:* ' + c + '\n*Nome:* ' + nomeC + '\n*End.:* ' + endC + 
+      '\n*Cidade:* ' + CidadeUfC + '\n*Fone:* ' + numCelC + '\n*Bloco Cart:* ' + BlocoCartela
+    );
+    const texto = encodeURIComponent(partes.join('\n\n'));
+    window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto, '_blank');
+  }
+
+  function atualizarContadorCartelas() {
+    const botao = document.getElementById('finalizarCompra');
+    const valorPix = document.getElementById('valorPix');
+    if (!botao || !valorPix) return;
+    const total = cartelasSelecionadas.length;
+    valor = total * 10;
+    if (total > 0) {
+      valorPix.textContent = 'R$ ' + valor.toFixed(2).replace('.', ',');
+      botao.textContent = 'Finalizar Compra (' + total + ' cartela' + (total>1?'s':'') + ' - R$ ' + valor.toFixed(2).replace('.', ',') + ')';
+      botao.disabled = false;
+      botao.style.opacity = '1';
+      botao.style.cursor = 'pointer';
+    } else {
+      valorPix.textContent = '';
+      botao.textContent = 'Finalizar Compra';
+      botao.disabled = true;
+      botao.style.opacity = '0.6';
+      botao.style.cursor = 'not-allowed';
     }
   }
+
   atualizarContadorCartelas();
-}
 
-function abrirFormularioCompra(){
-  if(cartelasSelecionadas.length===0){
-    alert('Selecione pelo menos uma cartela para comprar.');
-    return;
-  }
-  var modal=document.getElementById('ModalForm');
-  if(!modal){alert('Formulário não encontrado.');return;}
-  modal.style.display='flex';
-  document.getElementById('numcart').innerHTML='<b>'+cartelasSelecionadas.join(' - ')+'</b>';
-  numCartelaEsc=cartelasSelecionadas.join(' - ');
-}
-
-function enviarMensagem(){
-  var nomeC=document.getElementById('nomeCP').value||'';
-  var endC=document.getElementById('enderecoCP').value||'';
-  var CidadeUfC=(document.getElementById('cidadeCP').value||'')+'/'+(document.getElementById('ufCP').value||'');
-  var numCelC=document.getElementById('N_celularCP').value||'';
-  var cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
-  var partes = cartelas.map(c => 
-    '*Cartela:* ' + c + '\n*Nome:* ' + nomeC + '\n*End.:* ' + endC + 
-    '\n*Cidade:* ' + CidadeUfC + '\n*Fone:* ' + numCelC + '\n*Bloco Cart:* ' + BlocoCartela
-  );
-  var texto = partes.join('\n\n');
-  texto=window.encodeURIComponent(texto);
-  window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto,'_blank');
-}
-
-function atualizarContadorCartelas() {
-  const botao = document.getElementById('finalizarCompra');
-  const valorPix = document.getElementById('valorPix');
-  if (!botao) return;
-  var total = cartelasSelecionadas.length;
-  valor = total * 10;
-  if (total > 0) {
-    valorPix.textContent = 'R$ ' + valor.toFixed(2).replace('.', ',');
-
-
-    botao.textContent = 'Finalizar Compra (' + total + ' cartela' + (total>1?'s':'') + ' - R$ ' + valor.toFixed(2).replace('.', ',') + ')';
-    botao.disabled = false;
-    botao.style.opacity = '1';
-    botao.style.cursor = 'pointer';
-  } else {
-    botao.textContent = 'Finalizar Compra';
-    botao.disabled = true;
-    botao.style.opacity = '0.6';
-    botao.style.cursor = 'not-allowed';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  atualizarContadorCartelas();
   const botoes = document.querySelectorAll('button[id^="btnCartela_"]');
   botoes.forEach(botao => {
     botao.textContent = 'Selecionar';
     botao.className = 'btn-cartela';
     botao.removeAttribute('style');
   });
+
 });
 </script>
 <button id="btnPremios" class="cursor_m" onclick="mostrarPremios()"
