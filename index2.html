@@ -14426,6 +14426,29 @@ function copiarPix() {
 
 <script>
 
+function validarTelefone(valor) {
+    const regex = /^(d{2})sd{5}-d{4}$/; // formato (XX) XXXXX-XXXX
+    return regex.test(valor);
+}
+
+function aplicarMascaraTelefone(el) {
+    el.addEventListener("input", function() {
+        let valor = el.value.replace(/D/g, "");
+        if (valor.length > 11) valor = valor.slice(0, 11);
+
+        if (valor.length > 10) {
+            valor = valor.replace(/^(d{2})(d{5})(d{4})$/, "($1) $2-$3");
+        } else if (valor.length > 5) {
+            valor = valor.replace(/^(d{2})(d{4})(d{0,4})$/, "($1) $2-$3");
+        } else if (valor.length > 2) {
+            valor = valor.replace(/^(d{2})(d{0,5})$/, "($1) $2");
+        } else {
+            valor = valor.replace(/^(d*)$/, "($1");
+        }
+        el.value = valor;
+    });
+}
+
 window.validarCampos = function() {
     const camposObrigatorios = [
         "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
@@ -14434,6 +14457,7 @@ window.validarCampos = function() {
 
     const todosPreenchidos = camposObrigatorios.every(id => {
         const valor = document.getElementById(id).value.trim();
+        if (id === "N_celularCP") return validarTelefone(valor); // valida celular
         return valor.length > 0;
     });
     
@@ -14527,6 +14551,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const tel = document.getElementById("N_celularCP");
+  if (tel) aplicarMascaraTelefone(tel);
 
   const infoIcon = document.getElementById("infoIcon");
   const tooltip = document.getElementById("tooltipText");
