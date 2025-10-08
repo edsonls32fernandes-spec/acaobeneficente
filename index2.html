@@ -209,11 +209,12 @@ function copiarPix() {
               font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
 
       <h3 style="text-align:center; color:#222; margin-top:10px; margin-bottom:20px;">
-        Copie o código pix, efetue o pagamento de <span style="font-weight:bold; color:#d00000;" id="valorPix"></span>, preencha os dados, clique em enviar para abrir o WhatssApp e envie junto o comprovante do pix.
+        Copie o código pix, efetue o pagamento de 
+        <span style="font-weight:bold; color:#d00000;" id="valorPix"></span>, 
+        preencha os dados e clique em enviar para abrir o WhatsApp e enviar o comprovante do pix.
       </h3>
 
       <div style="text-align:center; margin-bottom:15px; position:relative;">
-        <!-- Ícone de informação com tooltip (funciona em PC e celular) -->
         <span id="infoIcon" style="position:relative; display:inline-block; margin-right:5px; cursor:pointer; font-size:18px;">
           ℹ️
           <span id="tooltipText" style="
@@ -242,16 +243,18 @@ function copiarPix() {
         <span id="numcart" style="font-weight:bold; color:#004080;">0000</span>
       </div>
       
-      <input placeholder="Nome" type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" 
+      <input placeholder="Nome" type="text" id="nomeCP" maxlength="50" 
+        onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" 
         style="width:94%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
-      <input placeholder="Endereço" type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" 
+      <input placeholder="Endereço" type="text" id="enderecoCP" maxlength="50" 
+        onfocus="RecuperarDados('entrouEndereco')" 
         style="width:94%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
       <div style="display:flex; gap:10px; margin-bottom:12px;">
-        <input placeholder="Cidade" type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" 
+        <input placeholder="Cidade" type="text" id="cidadeCP" maxlength="30" onblur="Maiuscula('cidadeCP')" 
           style="flex:1; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
-        <input placeholder="UF" type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" 
+        <input placeholder="UF" type="text" id="ufCP" maxlength="2" onblur="Maiuscula('ufCP')" 
           style="width:60px; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
       </div>
 
@@ -262,10 +265,12 @@ function copiarPix() {
         <button id="btnCopiarPixForm" onclick="copiarPix()" 
           style="background-color:#198754; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer; font-size:15px;">📋 Copiar código PIX</button>
 
-        <button onclick="enviarMensagem();GravarDadosLocal()" 
-          style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
+        <button id="btnEnviarPix" onclick="enviarMensagem();GravarDadosLocal()" disabled
+          style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:not-allowed; opacity:0.5;">
+          Enviar
+        </button>
       </div>
-  </div>
+    </div>
 </div>
 <!-- Inicio da cartela -->
 
@@ -14374,6 +14379,34 @@ function copiarPix() {
 <br>
 
 <script>
+
+const camposObrigatorios = [
+    "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
+  ];
+  const botaoEnviar = document.getElementById("btnEnviarPix");
+
+  // Função para checar se todos os campos estão preenchidos
+  function validarCampos() {
+    const todosPreenchidos = camposObrigatorios.every(id => {
+      const valor = document.getElementById(id).value.trim();
+      return valor.length > 0;
+    });
+
+    if (todosPreenchidos) {
+      botaoEnviar.disabled = false;
+      botaoEnviar.style.cursor = "pointer";
+      botaoEnviar.style.opacity = "1";
+    } else {
+      botaoEnviar.disabled = true;
+      botaoEnviar.style.cursor = "not-allowed";
+      botaoEnviar.style.opacity = "0.5";
+    }
+  }
+
+  // Monitorar alterações em todos os inputs
+  camposObrigatorios.forEach(id => {
+    document.getElementById(id).addEventListener("input", validarCampos);
+  });
 
 /* Exibe o tooltip ao tocar no celular */
 const infoIcon = document.getElementById("infoIcon");
