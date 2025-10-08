@@ -58,7 +58,7 @@ const premiosTexto = `1.Prêmio: Chaleira elétrica
 + PREMIOS EXTRAS`;
 
 var numCartelaEsc = "";
- let BlocoCartela='1 ao 500'
+ var BlocoCartela='1 ao 500'
 function CopiarPix(){
 var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
@@ -14487,6 +14487,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let cartelasSelecionadas = [];
   let valor = 0;
   let numCartelaEsc = "";
+  let BlocoCartela = ""; // define variável global usada no texto do WhatsApp
 
   window.alternarCartela = function(numero) {
     const btn = document.getElementById('btnCartela_' + numero);
