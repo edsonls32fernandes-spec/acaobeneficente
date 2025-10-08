@@ -39,24 +39,6 @@ span[style*="position:relative; display:inline-block;"]:hover span {
 <meta name="distribution" content="global" /> 
 </head>
 <script>
-const premiosTexto = `1.Prêmio: Chaleira elétrica
-2.Prêmio: Chaleira elétrica
-3.Prêmio: Cafeteira
-4.Prêmio: Cafeteira
-5.Prêmio: Sanduicheira
-6.Prêmio: Mixer
-7.Prêmio: Panquequeira
-8.Prêmio: Ventilador
-9.Prêmio: Churrasqueira portátil
-10.Prêmio: Lavadora de alta pressão portátil
-11.Prêmio: Forno micro-ondas
-12.Prêmio: Air fryer
-13.Prêmio: Fogão elétrico
-14.Prêmio: Bike sem marcha
-15.Prêmio: Bike 21 marchas
-
-+ PREMIOS EXTRAS`;
-
 var numCartelaEsc = "";
  
 document.getElementById('numcart').innerHTML ='<b>'+cartela+'</b><br><br>';
@@ -14423,6 +14405,28 @@ function copiarPix() {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
+  window.premiosTexto = `1.Prêmio: Chaleira elétrica
+2.Prêmio: Chaleira elétrica
+3.Prêmio: Cafeteira
+4.Prêmio: Cafeteira
+5.Prêmio: Sanduicheira
+6.Prêmio: Mixer
+7.Prêmio: Panquequeira
+8.Prêmio: Ventilador
+9.Prêmio: Churrasqueira portátil
+10.Prêmio: Lavadora de alta pressão portátil
+11.Prêmio: Forno micro-ondas
+12.Prêmio: Air fryer
+13.Prêmio: Fogão elétrico
+14.Prêmio: Bike sem marcha
+15.Prêmio: Bike 21 marchas
+
++ PREMIOS EXTRAS`;
+
+  window.mostrarPremios = function() {
+    alert(window.premiosTexto);
+  };
+
   window.fecharModal = function() {
     const modal = document.getElementById('ModalForm');
     if (modal) modal.style.display = 'none';
@@ -14433,13 +14437,10 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   const botaoEnviar = document.getElementById("btnEnviarPix");
 
-  // === Máscara de telefone ===
   function handlePhone(event) {
     const input = event.target;
     let valor = input.value.replace(/\D/g, "");
-
     if (valor.length > 11) valor = valor.slice(0, 11);
-
     if (valor.length > 10) {
       valor = valor.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
     } else if (valor.length > 6) {
@@ -14449,7 +14450,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       valor = valor.replace(/^(\d*)/, "($1");
     }
-
     input.value = valor;
     validarCampos();
   }
@@ -14464,35 +14464,31 @@ document.addEventListener('DOMContentLoaded', function() {
       const valor = document.getElementById(id).value.trim();
       return valor.length > 0;
     });
-
     const celular = document.getElementById("N_celularCP").value.trim();
     const celularEhValido = celularValido(celular);
-
     if (todosPreenchidos && celularEhValido) {
       botaoEnviar.disabled = false;
       botaoEnviar.style.cursor = "pointer";
       botaoEnviar.style.opacity = "1";
+      botaoEnviar.title = "Todos os campos foram preenchidos corretamente ✅";
     } else {
       botaoEnviar.disabled = true;
       botaoEnviar.style.cursor = "not-allowed";
       botaoEnviar.style.opacity = "0.5";
+      botaoEnviar.title = "";
     }
   }
 
-  // Vincula eventos de input
   camposObrigatorios.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener("input", validarCampos);
   });
 
-  // Máscara de telefone
   const tel = document.getElementById("N_celularCP");
   if (tel) tel.addEventListener("keyup", handlePhone);
 
-  // Tooltip de informação
   const infoIcon = document.getElementById("infoIcon");
   const tooltip = document.getElementById("tooltipText");
-
   if (infoIcon && tooltip) {
     infoIcon.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -14500,14 +14496,12 @@ document.addEventListener('DOMContentLoaded', function() {
       tooltip.style.visibility = isVisible ? "hidden" : "visible";
       tooltip.style.opacity = isVisible ? "0" : "1";
     });
-
     document.addEventListener("click", function () {
       tooltip.style.visibility = "hidden";
       tooltip.style.opacity = "0";
     });
   }
 
-  // Controle das cartelas
   let cartelasSelecionadas = [];
   let valor = 0;
   let numCartelaEsc = "";
@@ -14529,7 +14523,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     atualizarContadorCartelas();
-  }
+  };
 
   window.abrirFormularioCompra = function(){
     if(cartelasSelecionadas.length === 0){
@@ -14541,7 +14535,7 @@ document.addEventListener('DOMContentLoaded', function() {
     modal.style.display = 'flex';
     document.getElementById('numcart').innerHTML = '<b>'+cartelasSelecionadas.join(' - ')+'</b>';
     numCartelaEsc = cartelasSelecionadas.join(' - ');
-  }
+  };
 
   window.enviarMensagem = function(){
     const nomeC = document.getElementById('nomeCP').value || '';
@@ -14555,7 +14549,7 @@ document.addEventListener('DOMContentLoaded', function() {
     );
     const texto = encodeURIComponent(partes.join('\n\n'));
     window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto, '_blank');
-  }
+  };
 
   function atualizarContadorCartelas() {
     const botao = document.getElementById('finalizarCompra');
