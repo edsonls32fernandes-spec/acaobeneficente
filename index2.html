@@ -58,7 +58,7 @@ const premiosTexto = `1.Prêmio: Chaleira elétrica
 + PREMIOS EXTRAS`;
 
 var numCartelaEsc = "";
- let BlocoCartelas = '1 ao 500'
+ var BlocoCartela='1 ao 500'
 function CopiarPix(){
 var MinhaChave = document.getElementById("ChavePix");
 MinhaChave.select();
@@ -14528,7 +14528,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
     const partes = cartelas.map(c => 
       'Cartela: ' + c + '\nNome: ' + nomeC + '\nEnd.: ' + endC + 
-      '\nCidade: ' + CidadeUfC + '\nFone: ' + numCelC + '\nBloco Cart: ' + BlocoCartelas
+      '\nCidade: ' + CidadeUfC + '\nFone: ' + numCelC
     );
     const texto = encodeURIComponent(partes.join('\n\n'));
     window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto, '_blank');
