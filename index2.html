@@ -174,12 +174,29 @@ text-transform: uppercase;
 </style>
 <body style="background-color:white; color:black; margin-top:30px;" onload="mostrarForm('fechar')">
 
-<header style="text-align:center; margin-bottom:25px;">
-  <h2 style="font-family:Arial;">💛Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes💛</h2>
-  <p style="font-weight:bold; font-family:Arial;">Sorteio: 26/10/2025 às 14:00</p>
-  <br>
-  <hr style="margin-top:25px;">
+<header style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fffbe8;
+  text-align: center;
+  padding: 15px 10px;
+  z-index: 1000;
+  border-bottom: 2px solid #ffd54f;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+">
+  <h2 style="margin: 0; font-size: 18px; color: #222;">
+    💛 Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes 💛
+  </h2>
+  <p style="margin: 5px 0 0; font-weight: bold; color: #333;">
+    Sorteio: 26/10/2025 às 14:00
+  </p>
 </header>
+
+<!-- Espaço para evitar que o conteúdo fique escondido atrás do cabeçalho -->
+<div style="margin-top: 110px;"></div>
 <script>
 function copiarPix() {
   var texto = "00020101021126360014br.gov.bcb.pix0114+55489960408275204000053039865802BR5925EDSON LUIZ SCHNEIDER FERN6009SAO PAULO622905251K6Y303752T45T248Q6DK4X5D630451E0";
@@ -236,7 +253,7 @@ function copiarPix() {
             font-size:12px;
             line-height:1.4;
           ">
-            Caso alguma cartela não esteja disponível, o sistema escolherá outra automaticamente.
+            Caso alguma cartela não esteja disponível, será validado após enviar via WhatsApp.
           </span>
         </span>
         <br>
