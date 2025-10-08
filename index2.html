@@ -190,12 +190,13 @@ text-transform: uppercase;
   </div>
 </header>
 <div id="ModalPremios" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
-  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; font-family: Arial, sans-serif;">
+  
   <div style="background:white; padding:20px; border-radius:12px; max-width:500px; width:90%; position:relative; text-align:left;">
     <button onclick="fecharModalPremios()" 
-      style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
-    <h3 style="text-align:center; margin-bottom:15px;">🏆 Lista de Prêmios</h3>
-    <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5;"></pre>
+      style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer; font-family: Arial, sans-serif;">✖</button>
+    <h3 style="text-align:center; margin-bottom:15px; font-family: Arial, sans-serif;">🏆 Lista de Prêmios</h3>
+    <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5; font-family: Arial, sans-serif;"></pre>
   </div>
 </div>
 <script>
@@ -14469,21 +14470,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target === this) this.style.display = 'none';
   });
 
-  window.premiosTexto = `1.Prêmio: Chaleira elétrica
-2.Prêmio: Chaleira elétrica
-3.Prêmio: Cafeteira
-4.Prêmio: Cafeteira
-5.Prêmio: Sanduicheira
-6.Prêmio: Mixer
-7.Prêmio: Panquequeira
-8.Prêmio: Ventilador
-9.Prêmio: Churrasqueira portátil
-10.Prêmio: Lavadora de alta pressão portátil
-11.Prêmio: Forno micro-ondas
-12.Prêmio: Air fryer
-13.Prêmio: Fogão elétrico
-14.Prêmio: Bike sem marcha
-15.Prêmio: Bike 21 marchas
+  window.premiosTexto = `1. Chaleira elétrica
+2. Chaleira elétrica
+3. Cafeteira
+4. Cafeteira
+5. Sanduicheira
+6. Mixer
+7. Panquequeira
+8. Ventilador
+9. Churrasqueira portátil
+10. Lavadora de alta pressão portátil
+11. Forno micro-ondas
+12. Air fryer
+13. Fogão elétrico
+14. Bike sem marcha
+15. Bike 21 marchas
 
 + PREMIOS EXTRAS`;
 
