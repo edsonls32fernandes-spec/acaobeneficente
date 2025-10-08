@@ -311,7 +311,7 @@ function copiarPix() {
         <button id="btnCopiarPixForm" onclick="copiarPix()" 
           style="background-color:#198754; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer; font-size:15px;">📋 Copiar código PIX</button>
 
-        <button title="Preencha corretamente todos os campos ⚠️" id="btnEnviarPix" onclick="enviarMensagem();GravarDadosLocal()" disabled
+        <button title="Preencha corretamente todos os campos ⚠️" id="btnEnviarPix" onclick="enviarMensagem()" disabled
           style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:not-allowed; opacity:0.5;">
           Enviar
         </button>
@@ -14470,6 +14470,26 @@ function RecuperarDados(campo) {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  function mascaraCelular(event) {
+    let el = event.target;
+    let val = el.value.replace(/D/g, ''); // remove tudo que não for número
+
+    if (val.length > 11) val = val.substring(0, 11); // limite máximo
+
+    if (val.length > 0) {
+      val = val.replace(/^(d{2})(d)/g, "($1) $2"); // adiciona parênteses no DDD
+      val = val.replace(/(d{5})(d{4})$/, "$1-$2"); // adiciona hífen
+    }
+
+    el.value = val;
+  }
+
+  const telInput = document.getElementById("N_celularCP");
+  if (telInput) {
+    telInput.addEventListener("input", mascaraCelular);
+  }
+
 
   document.getElementById('ModalPremios').addEventListener('click', function(e){
     if (e.target === this) this.style.display = 'none';
