@@ -216,7 +216,7 @@ function copiarPix() {
     box-shadow:0 6px 20px rgba(0,0,0,0.35); width:auto; font-family:Arial, sans-serif; box-sizing:border-box; text-align:left; height:auto; position:relative;">
     
       <!-- Botão X no canto superior direito -->
-      <button onclick="mostrarForm('fechar','')" 
+      <button onclick="fecharModal()" 
         style="position:absolute; top:10px; right:20px; background:none; border:none; 
               font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
 
@@ -14394,6 +14394,11 @@ function copiarPix() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+  window.fecharModal = function() {
+    const modal = document.getElementById('ModalForm');
+    if (modal) modal.style.display = 'none';
+  };
 
   const camposObrigatorios = [
     "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
