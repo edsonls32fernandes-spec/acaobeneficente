@@ -245,20 +245,17 @@ function copiarPix() {
       <input placeholder="Nome" type="text" id="nomeCP" onfocus="RecuperarDados('entrouNome')" onblur="Maiuscula('nomeCP')" maxlength="50" 
         style="width:94%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
-      <label>Endereço</label><br>
-      <input type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" 
+      <input placeholder="Endereço" type="text" id="enderecoCP" onfocus="RecuperarDados('entrouEndereco')" maxlength="50" 
         style="width:94%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
-      <label>Cidade / UF</label><br>
       <div style="display:flex; gap:10px; margin-bottom:12px;">
-        <input type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" 
+        <input placeholder="Cidade" type="text" id="cidadeCP" onblur="Maiuscula('cidadeCP')" maxlength="30" 
           style="flex:1; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
-        <input type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" 
+        <input placeholder="UF" type="text" id="ufCP" onblur="Maiuscula('ufCP')" maxlength="2" 
           style="width:60px; padding:10px; border:1px solid #ccc; border-radius:8px; outline:none;">
       </div>
 
-      <label>DDD + Celular</label><br>
-      <input type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" 
+      <input placeholder="DDD + Celular" type="tel" id="N_celularCP" maxlength="15" onkeyup="handlePhone(event)" 
         style="width:94%; padding:10px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px; outline:none;"><br>
 
       <div style="text-align:center; margin-bottom:18px;">
