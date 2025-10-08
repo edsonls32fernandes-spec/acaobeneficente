@@ -14536,12 +14536,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const CidadeUfC = (document.getElementById('cidadeCP').value || '') + '/' + (document.getElementById('ufCP').value || '');
     const numCelC = document.getElementById('N_celularCP').value || '';
     const cartelas = cartelasSelecionadas.length > 0 ? cartelasSelecionadas : [numCartelaEsc];
-    const partes = cartelas.map(c => 
-      'Cartela: ' + c + '\nNome: ' + nomeC + '\nEnd.: ' + endC + 
-      '\nCidade: ' + CidadeUfC + '\nFone: ' + numCelC + '\nBloco Cart: ' + BlocoCartela
-    );
-    const texto = encodeURIComponent(partes.join('\n\n'));
-    window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+texto, '_blank');
+    const textoWhatsApp = encodeURIComponent(texto.join('\n\n'));
+    window.open('https://api.whatsapp.com/send?phone=5548996040827&text='+textoWhatsApp, '_blank');
   }
 
   function atualizarContadorCartelas() {
