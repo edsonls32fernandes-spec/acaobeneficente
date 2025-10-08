@@ -14426,6 +14426,13 @@ function copiarPix() {
 
 <script>
 
+function Maiuscula(idCampo) {
+    const el = document.getElementById(idCampo);
+    if (el && el.value) {
+        el.value = el.value.toUpperCase();
+    }
+}
+
 function RecuperarDados(campo) {
     console.log("RecuperarDados chamado com:", campo);
     // Aqui você pode implementar o que quer fazer
