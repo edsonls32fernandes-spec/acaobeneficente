@@ -14426,6 +14426,23 @@ function copiarPix() {
 
 <script>
 
+function mascaraCelular(o, f) {
+    setTimeout(function(){
+        var v = celularMascarar(o.value);
+        if (v !== o.value) {
+            o.value = v;
+        }
+    }, 1);
+}
+
+function celularMascarar(v) {
+    v = v.replace(/D/g, ""); // Remove tudo que não for número
+    if (v.length > 11) v = v.slice(0, 11); // Máximo de 11 dígitos
+    v = v.replace(/^(d{2})(d)/g, "($1) $2"); // Coloca parênteses no DDD
+    v = v.replace(/(d{5})(d{4})$/, "$1-$2"); // Coloca hífen no celular
+    return v;
+}
+
 window.validarCampos = function() {
     const camposObrigatorios = [
         "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
@@ -14436,8 +14453,10 @@ window.validarCampos = function() {
         const valor = document.getElementById(id).value.trim();
         return valor.length > 0;
     });
+
     const celular = document.getElementById("N_celularCP").value.trim();
-    const celularEhValido = celular.replace(/D/g, "").length === 11;
+    const celularNumero = celular.replace(/D/g, ""); // Remove máscara
+    const celularEhValido = /^d{11}$/.test(celularNumero); // Valida DDD + celular
 
     if (todosPreenchidos && celularEhValido) {
         botaoEnviar.disabled = false;
@@ -14472,6 +14491,11 @@ function RecuperarDados(campo) {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  document.getElementById("N_celularCP").addEventListener("input", function() {
+      mascaraCelular(this);
+      validarCampos();
+  });
 
   document.getElementById('ModalPremios').addEventListener('click', function(e){
     if (e.target === this) this.style.display = 'none';
