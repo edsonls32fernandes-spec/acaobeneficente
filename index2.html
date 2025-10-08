@@ -21,6 +21,10 @@
   background-color: green !important;
   color: white !important;
 }
+span[style*="position:relative; display:inline-block;"]:hover span {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 </style>
 <meta charset="UTF-8">
 <title>Cartelas de Bingo Virtuais</title>
@@ -192,9 +196,9 @@ function copiarPix() {
   background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
   
     <div style="overflow:auto; background:white; padding:25px 25px 30px 25px; border-radius:20px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.35); width:90%; max-width:380px;
-      font-family:Arial, sans-serif; box-sizing:border-box; text-align:left; height:95%; position:relative;">
-      
+    box-shadow:0 6px 20px rgba(0,0,0,0.35); width:90%; max-width:380px;
+    font-family:Arial, sans-serif; box-sizing:border-box; text-align:left; height:95%; position:relative;">
+    
       <!-- Botão X no canto superior direito -->
       <button onclick="mostrarForm('fechar','')" 
         style="position:absolute; top:10px; right:10px; background:none; border:none; 
@@ -205,7 +209,33 @@ function copiarPix() {
         <span style="font-weight:bold; color:#d00000;" id="valorPix"></span> e envie o comprovante junto.
       </h3>
 
-      <div style="text-align:center; margin-bottom:15px;">Cartela(s): 
+      <div style="text-align:center; margin-bottom:15px; position:relative;">
+        <!-- Ícone de informação com tooltip -->
+        <span style="position:relative; display:inline-block; margin-right:5px; cursor:pointer;">
+          ℹ️
+          <span style="
+            visibility:hidden;
+            width:220px;
+            background-color:#333;
+            color:#fff;
+            text-align:left;
+            border-radius:6px;
+            padding:8px;
+            position:absolute;
+            z-index:1;
+            bottom:125%;
+            left:50%;
+            transform:translateX(-50%);
+            opacity:0;
+            transition:opacity 0.3s;
+            font-size:12px;
+            line-height:1.4;
+          ">
+            Caso alguma cartela não esteja disponível, o sistema escolherá outra automaticamente.
+          </span>
+        </span>
+
+        <span style="font-weight:bold;">Cartela(s): </span>
         <span id="numcart" style="font-weight:bold; color:#004080;">0000</span>
       </div>
       
@@ -236,11 +266,7 @@ function copiarPix() {
         <button onclick="enviarMensagem();GravarDadosLocal()" 
           style="background-color:#007bff; color:white; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Enviar</button>
       </div>
-
-      <div style="font-size:12px; color:#555; margin-bottom:25px; text-align:center; line-height:1.4;">
-        Obs.: Caso alguma cartela não esteja disponível, o sistema escolherá outra automaticamente.
-      </div>
-  </div>
+    </div>
   </div>
 </div>
 <!-- Inicio da cartela -->
