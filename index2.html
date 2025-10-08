@@ -208,13 +208,11 @@ function copiarPix() {
         style="position:absolute; top:10px; right:10px; background:none; border:none; 
               font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
 
-      <h4 style="text-align:center; color:#222; margin-top:10px; margin-bottom:20px;">
-        <p>* Copie o código pix
-        <p>* Efetue o pagamento de <span style="font-weight:bold; color:#d00000;" id="valorPix"></span>
-        <p>* Preencha todos os campos
-        <p>* Clique em enviar para abrir o WhatsApp
-        <p>* Envie junto o comprovante do pix
-      </h4>
+      <h3 style="text-align:center; color:#222; margin-top:10px; margin-bottom:20px;">
+        Copie o código pix, efetue o pagamento de 
+        <span style="font-weight:bold; color:#d00000;" id="valorPix"></span>, 
+        preencha os dados e clique em enviar para abrir o WhatsApp e enviar o comprovante do pix.
+      </h3>
 
       <div style="text-align:center; margin-bottom:15px; position:relative;">
         <span id="infoIcon" style="position:relative; display:inline-block; margin-right:5px; cursor:pointer; font-size:18px;">
@@ -14382,21 +14380,15 @@ function copiarPix() {
 
 <script>
 
-  const camposObrigatorios = ["nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"];
+  const camposObrigatorios = [
+    "nomeCP", "enderecoCP", "cidadeCP", "ufCP", "N_celularCP"
+  ];
   const botaoEnviar = document.getElementById("btnEnviarPix");
 
-  // Expressão regular: (XX) 9XXXX-XXXX, mas aceita variações sem formatação
-  const regexCelular = /^((?d{2})?s?)?(9d{4}[-s]?d{4})$/;
-
+  // Função para checar se todos os campos estão preenchidos
   function validarCampos() {
     const todosPreenchidos = camposObrigatorios.every(id => {
-      const campo = document.getElementById(id);
-      const valor = campo.value.trim();
-
-      if (id === "N_celularCP") {
-        // valida formato do celular
-        return regexCelular.test(valor);
-      }
+      const valor = document.getElementById(id).value.trim();
       return valor.length > 0;
     });
 
@@ -14409,9 +14401,9 @@ function copiarPix() {
       botaoEnviar.style.cursor = "not-allowed";
       botaoEnviar.style.opacity = "0.5";
     }
-  };
+  }
 
-  // Monitora alterações em todos os inputs
+  // Monitorar alterações em todos os inputs
   camposObrigatorios.forEach(id => {
     document.getElementById(id).addEventListener("input", validarCampos);
   });
