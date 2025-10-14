@@ -156,11 +156,17 @@ text-transform: uppercase;
     <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5; font-family: Arial, sans-serif;"></pre>
   </div>
 </div>
-<div id="ModalVideo" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
-  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; font-family: Arial, sans-serif;">
-  <div style="background:white; padding:10px; border-radius:12px; max-width:560px; width:90%; position:relative;">
+<div id="ModalVideo" 
+  style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+         background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; font-family: Arial, sans-serif;">
+  
+  <div id="ModalVideoContent"
+       style="background:white; padding:10px; border-radius:12px; max-width:560px; width:90%; position:relative; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+       
     <button onclick="fecharModalVideo()" 
-      style="position:absolute; top:5px; right:10px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
+      style="position:absolute; top:5px; right:10px; background:none; border:none; 
+             font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
+
     <div style="position:relative; padding-top:56.25%;"> 
       <iframe id="iframeVideo"
         src="https://drive.google.com/file/d/1kBMohpP64U8TyRGDwb7L-LgTpdf_W1VK/preview"
@@ -9687,9 +9693,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modal) {
       modal.style.display = 'none';
       const iframe = document.getElementById('iframeVideo');
-      if (iframe) iframe.src = iframe.src; // pausa/recarrega
+      if (iframe) iframe.src = iframe.src; // pausa o vídeo
     }
   };
+
+  // Fecha o modal de vídeo ao clicar fora do player
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('ModalVideo');
+    const content = document.getElementById('ModalVideoContent');
+    if (modal && content && e.target === modal) {
+      fecharModalVideo();
+    }
+  });
 
   window.fecharModal = function() {
     const modal = document.getElementById('ModalForm');
