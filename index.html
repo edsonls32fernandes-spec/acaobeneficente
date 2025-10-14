@@ -95,21 +95,37 @@ text-transform: uppercase;
   border-bottom: 2px solid #ffd54f;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
-  padding-left: 1px;
 ">
-  <p>💛</p>
   <h2 style="margin: 0; font-size: 18px; color: #222;">
-    Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes
+    💛 Bingo Beneficente em prol dos Tratamentos de Saúde de Edson Fernandes 💛
   </h2>
   <p style="margin: 8px 0 5px; font-weight: bold; color: #333; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 15px;">
-    Local:📍 
+    Local: 📍 
     <a href="https://www.google.com/maps?q=Sítio+Chico+Bento&daddr=Sítio+Chico+Bento&destination_place_id=ChIJLQ2UjJYH75QRsC8I5oN8kqY" 
        target="_blank" 
        style="color:#007bff; text-decoration:none; font-weight:bold;">
        Sítio Chico Bento
     </a>
+  </p>  
+  <!-- Inclua o Font Awesome (caso ainda não tenha): -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <p style="margin: 8px 0 5px; font-weight: bold; color: #333; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 15px;">
+    <i class="fa-brands fa-instagram" style="color:#E4405F;"></i>
+    <a href="https://www.instagram.com/schneider_fernandes/"
+      target="_blank"
+      style="color:#007bff; text-decoration:none; font-weight:bold;">
+      @schneider_fernandes
+    </a>
   </p>
-  
+
+  <p style="margin: 8px 0 5px; text-align:center;">
+    <a href="#" onclick="abrirModalVideo()" 
+      style="color:#007bff; text-decoration:none; font-weight:bold; font-size:15px;">
+      🎥 Como comprar sua cartela
+    </a>
+  </p>
+
   <p style="margin: 5px 0 10px; font-weight: bold; color: #333;">
     Sorteio: 26/10/2025 às 14:00
   </p>
@@ -138,6 +154,30 @@ text-transform: uppercase;
       style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer; font-family: Arial, sans-serif;">✖</button>
     <h3 style="text-align:center; margin-bottom:15px; font-family: Arial, sans-serif;">🏆 Lista de Prêmios</h3>
     <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5; font-family: Arial, sans-serif;"></pre>
+  </div>
+</div>
+<div id="ModalVideo" 
+  style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+         background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; font-family: Arial, sans-serif;">
+  
+  <div id="ModalVideoContent"
+       style="background:white; padding:10px; border-radius:12px; max-width:560px; width:90%; position:relative; box-shadow:0 4px 10px rgba(0,0,0,0.3); overflow:hidden;">
+       
+    <!-- Botão de fechar -->
+    <button onclick="fecharModalVideo()" 
+      style="position:absolute; top:6px; right:10px; z-index:10; background-color:white; 
+             border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer;
+             border-radius:50%; width:30px; height:30px; line-height:28px; text-align:center;
+             box-shadow:0 2px 5px rgba(0,0,0,0.3);">✖</button>
+
+    <!-- Contêiner do vídeo -->
+    <div style="position:relative; padding-top:56.25%; z-index:1;"> 
+      <iframe id="iframeVideo"
+        src="https://drive.google.com/file/d/1ayF6KHkfby2ijDgtFM__goD6Yu9ohbQV/preview"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; z-index:0;"
+        allow="autoplay; fullscreen">
+      </iframe>
+    </div>
   </div>
 </div>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
@@ -248,221 +288,6 @@ text-transform: uppercase;
 </div>
 <!-- Inicio da cartela -->
 
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0241 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0241" onclick="alternarCartela('0241')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">8</th>
-<th width="36">20</th>
-<th width="36">31</th>
-<th width="36">40</th>
-<th width="36">51</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">12</th>
-<th width="36">24</th>
-<th width="36">33</th>
-<th width="36">41</th>
-<th width="36">60</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0242 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0242" onclick="alternarCartela('0242')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">8</th>
-<th width="36">16</th>
-<th width="36">25</th>
-<th width="36">40</th>
-<th width="36">49</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">12</th>
-<th width="36">20</th>
-<th width="36">30</th>
-<th width="36">46</th>
-<th width="36">56</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0243 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0243" onclick="alternarCartela('0243')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">1</th>
-<th width="36">19</th>
-<th width="36">30</th>
-<th width="36">38</th>
-<th width="36">49</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">2</th>
-<th width="36">20</th>
-<th width="36">32</th>
-<th width="36">43</th>
-<th width="36">52</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0244 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0244" onclick="alternarCartela('0244')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">8</th>
-<th width="36">13</th>
-<th width="36">30</th>
-<th width="36">41</th>
-<th width="36">54</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">11</th>
-<th width="36">20</th>
-<th width="36">35</th>
-<th width="36">45</th>
-<th width="36">57</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0245 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0245" onclick="alternarCartela('0245')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">6</th>
-<th width="36">15</th>
-<th width="36">27</th>
-<th width="36">39</th>
-<th width="36">53</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">9</th>
-<th width="36">20</th>
-<th width="36">30</th>
-<th width="36">43</th>
-<th width="36">58</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
 <div  class="content">
 <table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
     <tr>
@@ -9431,6 +9256,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('ModalPremios');
     if (modal) modal.style.display = 'none';
   };
+
+  window.abrirModalVideo = function() {
+    const modal = document.getElementById('ModalVideo');
+    if (modal) modal.style.display = 'flex';
+  };
+
+  window.fecharModalVideo = function() {
+    const modal = document.getElementById('ModalVideo');
+    if (modal) {
+      modal.style.display = 'none';
+      const iframe = document.getElementById('iframeVideo');
+      if (iframe) iframe.src = iframe.src; // pausa o vídeo
+    }
+  };
+
+  // Fecha o modal de vídeo ao clicar fora do player
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('ModalVideo');
+    const content = document.getElementById('ModalVideoContent');
+    if (modal && content && e.target === modal) {
+      fecharModalVideo();
+    }
+  });
 
   window.fecharModal = function() {
     const modal = document.getElementById('ModalForm');
