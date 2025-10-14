@@ -118,6 +118,14 @@ text-transform: uppercase;
       @schneider_fernandes
     </a>
   </p>
+
+  <p style="margin: 8px 0 5px; text-align:center;">
+    <a href="#" onclick="abrirModalVideo()" 
+      style="color:#007bff; text-decoration:none; font-weight:bold; font-size:15px;">
+      🎥 Como comprar sua cartela
+    </a>
+  </p>
+
   <p style="margin: 5px 0 10px; font-weight: bold; color: #333;">
     Sorteio: 26/10/2025 às 14:00
   </p>
@@ -146,6 +154,20 @@ text-transform: uppercase;
       style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer; font-family: Arial, sans-serif;">✖</button>
     <h3 style="text-align:center; margin-bottom:15px; font-family: Arial, sans-serif;">🏆 Lista de Prêmios</h3>
     <pre id="conteudoPremios" style="white-space:pre-wrap; font-size:14px; line-height:1.5; font-family: Arial, sans-serif;"></pre>
+  </div>
+</div>
+<div id="ModalVideo" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+  background-color:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; font-family: Arial, sans-serif;">
+  <div style="background:white; padding:10px; border-radius:12px; max-width:560px; width:90%; position:relative;">
+    <button onclick="fecharModalVideo()" 
+      style="position:absolute; top:5px; right:10px; background:none; border:none; font-size:22px; font-weight:bold; color:red; cursor:pointer;">✖</button>
+    <div style="position:relative; padding-top:56.25%;"> 
+      <iframe id="iframeVideo"
+        src="https://drive.google.com/file/d/1kBMohpP64U8TyRGDwb7L-LgTpdf_W1VK/preview"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+        allow="autoplay; fullscreen">
+      </iframe>
+    </div>
   </div>
 </div>
   <button onclick="topFunction()" id="BtnInicio" title="Voltar ao Topo da Tela">Inicio</button>
@@ -256,49 +278,6 @@ text-transform: uppercase;
 </div>
 <!-- Inicio da cartela -->
 
-<div  class="content">
-<table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
-    <tr>
-        <th width="550" height="297" align="center" bgcolor="transparent" style="font-size:15px;font-family:Arial, Helvetica, sans-serif;">
-      <br>
-
-<br>
-<b><font face="Arial" size="3"  color="black" > CARTELA:</font></b><font color="red" size="3"> 0233 </font><br>
-<table  width="100%"  >
-<tr>
-<br>
-<button class="cursor_m" style="bottom: 25px; left: 25px; z-index: 9999; background-color: blue; color: white; font-size: 16px; border: none; padding: 15px 25px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 6px; opacity: 0.6;"  type="button"   id="btnCartela_0233" onclick="alternarCartela('0233')"><font size="3" face="arial">&nbsp&nbsp Selecionar &nbsp</font></button>&nbsp
-<br>
-<br>
-<table width="201" height="80" border="1" bgcolor="white" style="font-size: min(16px,48vw)">
-<tbody style="font-family:Arial, Helvetica, sans-serif; color: black;" >
-<tr align="center">
-<th width="36">6</th>
-<th width="36">15</th>
-<th width="36">27</th>
-<th width="36">38</th>
-<th width="36">52</th>
-</tr>
-<tr>
-<tr align="center">
-<th width="36">9</th>
-<th width="36">19</th>
-<th width="36">30</th>
-<th width="36">42</th>
-<th width="36">56</th>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<div style="font-size: min(10px,6vw);font-family:Arial, Helvetica, sans-serif;">
-   Serão [ 15 ] prêmios. Cada prêmio concorrerá com esses mesmos números!</p>
-</div>
-</tr>
-</table>
-</div>
-<br>
-<!-- Inicio da cartela -->
 <div  class="content">
 <table width="290" height="303" border="0" style="margin-left: 10px; margin: 0 auto; border: 1px solid rgba(137, 139, 154, 0.626); border-radius: 20px; border-radius: 20px;">
     <tr>
@@ -9696,6 +9675,20 @@ document.addEventListener('DOMContentLoaded', function() {
   window.fecharModalPremios = function() {
     const modal = document.getElementById('ModalPremios');
     if (modal) modal.style.display = 'none';
+  };
+
+  window.abrirModalVideo = function() {
+    const modal = document.getElementById('ModalVideo');
+    if (modal) modal.style.display = 'flex';
+  };
+
+  window.fecharModalVideo = function() {
+    const modal = document.getElementById('ModalVideo');
+    if (modal) {
+      modal.style.display = 'none';
+      const iframe = document.getElementById('iframeVideo');
+      if (iframe) iframe.src = iframe.src; // pausa/recarrega
+    }
   };
 
   window.fecharModal = function() {
